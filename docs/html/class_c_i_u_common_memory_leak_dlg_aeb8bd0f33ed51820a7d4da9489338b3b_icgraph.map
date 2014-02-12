@@ -1,0 +1,6 @@
+<map id="CIUCommonMemoryLeakDlg::SetAllocLabel" name="CIUCommonMemoryLeakDlg::SetAllocLabel">
+<area shape="rect" id="node2" href="$class_c_mem_leak_gdi_obj_dlg.html#ae03a209c7afdab2c4f59e0f412b3eefc" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="254,4,413,47"/>
+<area shape="rect" id="node3" href="$class_c_mem_leak_memory_dlg.html#a159cca4e9496c109aa1caed4c82dec41" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="251,71,416,113"/>
+<area shape="rect" id="node4" href="$class_c_mem_leak_thread_dlg.html#a58b8d91bb6107948bf628c631e674b3b" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="254,137,413,180"/>
+<area shape="rect" id="node5" href="$class_c_mem_leak_user_obj_dlg.html#aef6d5dd93d5a91019391c46998d61099" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="254,204,413,247"/>
+</map>

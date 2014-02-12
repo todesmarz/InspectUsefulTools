@@ -146,6 +146,14 @@ void CDummyFileSizeDlg::OnBnClickedFileAttributePathSelectButton()
 {
 	// すべてのファイルを対象
 	CFileDialog fileDlg(FALSE, NULL, NULL, OFN_HIDEREADONLY , CString((LPCTSTR) IDS_IU_FILETYPE_DESCRIPT));
+
+	UpdateData(TRUE);
+	CString strFilePath = m_strFilePath;
+	if (strFilePath.IsEmpty() == false) {
+		PathRemoveFileSpec((LPTSTR)(LPCTSTR)strFilePath);
+		fileDlg.m_ofn.lpstrInitialDir = strFilePath;
+	}
+
 	if (fileDlg.DoModal() == IDOK) {
 		m_strFilePath = fileDlg.GetPathName();
 

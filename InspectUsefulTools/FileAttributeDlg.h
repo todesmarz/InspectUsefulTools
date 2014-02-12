@@ -28,9 +28,7 @@ protected:
 	afx_msg void OnDropFiles(HDROP hDropInfo);
 	afx_msg void OnBnClickedFileAttributeOpenButton();
 	afx_msg void OnBnClickedFileAttributeSaveButton();
+	afx_msg void OnEnChangeFileAttributePathEdit();
 
 	DECLARE_MESSAGE_MAP()
-
-public:
-	afx_msg void OnEnChangeFileAttributePathEdit();
 };

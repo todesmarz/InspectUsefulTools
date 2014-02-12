@@ -12,7 +12,7 @@ class CFileTimeStampDlg : public CDialog
 	DECLARE_DYNAMIC(CFileTimeStampDlg)
 
 private:
-	CString m_strFileLockPath;				/// ファイルパス
+	CString m_strFileTimeStampPath;				/// ファイルパス
 
 public:
 	CFileTimeStampDlg(CWnd* pParent = NULL);   // 標準コンストラクタ

@@ -17,12 +17,15 @@ private:
 	CString m_strFileData;
 	BOOL m_bExecuteMode;
 
+	CString m_strTailFilePath;
 
 public:
 	CFileTailDlg(CWnd* pParent = NULL);   // 標準コンストラクタ
 
 protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV サポート
 	DECLARE_MESSAGE_MAP()
+	virtual BOOL OnInitDialog();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
 	virtual CString GetInformation(BOOL bInit);

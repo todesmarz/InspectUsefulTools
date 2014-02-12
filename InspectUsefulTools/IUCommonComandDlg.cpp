@@ -20,7 +20,6 @@ IMPLEMENT_DYNAMIC(CIUCommonComandDlg, CDialog)
 CIUCommonComandDlg::CIUCommonComandDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CIUCommonComandDlg::IDD, pParent)
 {
-
 }
 
 /*!

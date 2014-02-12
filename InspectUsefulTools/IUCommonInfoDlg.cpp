@@ -27,6 +27,7 @@ CIUCommonInfoDlg::CIUCommonInfoDlg(CWnd* pParent /*=NULL*/)
 	, m_strResult(_T(""))
 {
 	m_pDialog = NULL;
+	m_inFindDialog = NULL;
 }
 
 /*!
@@ -37,7 +38,14 @@ CIUCommonInfoDlg::~CIUCommonInfoDlg()
 	if (m_pDialog != NULL) {
 		delete m_pDialog;
 		m_pDialog = NULL;
-	}	
+	}
+
+	if (m_inFindDialog != NULL) {
+		if (m_inFindDialog->IsTerminating() == FALSE) {
+			m_inFindDialog->DestroyWindow();
+		}
+		m_inFindDialog = NULL;
+	}
 }
 
 /*!
@@ -52,12 +60,18 @@ void CIUCommonInfoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDD_IU_COM_INFO_RESULT_LABEL, m_strResult);
 }
 
+//検索ダイアログ用(追加コード)
+UINT CIUCommonInfoDlg::WM_FINDREPLACE = ::RegisterWindowMessage( FINDMSGSTRING );
+
 /*!
  @brief メッセージマップ定義
 */
 BEGIN_MESSAGE_MAP(CIUCommonInfoDlg, CDialog)
 	ON_BN_CLICKED(IDD_IU_COM_COMMAND_EXEC_BUTTON, &CIUCommonInfoDlg::OnBnClickedIuComInfoUpdateButton)
 	ON_WM_SIZE()
+	//検索ダイアログ用のメッセージ(追加コード)
+	ON_REGISTERED_MESSAGE(WM_FINDREPLACE, OnFindReplace)
+	ON_WM_SHOWWINDOW()
 END_MESSAGE_MAP()
 
 
@@ -74,7 +88,10 @@ BOOL CIUCommonInfoDlg::OnInitDialog()
 	}
 
 	// 情報を表示
-	DisplayInformation(TRUE);
+	//DisplayInformation(TRUE);
+	
+	m_strResult.LoadString(IDS_IU_INFORMATION_INIT_MESSAGE);
+	UpdateData(FALSE);
 
 	return TRUE;
 }
@@ -91,6 +108,25 @@ BOOL CIUCommonInfoDlg::PreTranslateMessage(MSG* pMsg)
         //  必ず０で戻ること!!
         //  0以外で戻ると各コントロールへ次の処理が回らなくなる
     }
+	if (pMsg->message == WM_KEYDOWN) {
+		if (pMsg->wParam == _T('F')) {
+		if((GetAsyncKeyState(VK_CONTROL) & 0x8000) == 0x8000) {
+			if (m_inFindDialog != NULL && m_inFindDialog->IsTerminating() == FALSE) {
+				m_inFindDialog->ActivateTopParent();
+			} else {
+				if (m_inFindDialog != NULL && m_inFindDialog->IsTerminating() == TRUE) {
+					delete m_inFindDialog;
+					m_inFindDialog = NULL;
+				}
+
+				m_inFindDialog = new CFindReplaceDialog();
+				m_inFindDialog->Create(TRUE, _T(""), _T(""), 1, this);
+
+				m_inFindDialog->ShowWindow(SW_NORMAL);
+			}
+		}
+	}
+	}
     return CDialog::PreTranslateMessage(pMsg);
 }
 
@@ -144,6 +180,24 @@ void CIUCommonInfoDlg::OnSize(UINT nType, int cx, int cy)
 }
 
 /*!
+ @brief リサイズイベント\n
+ WM_SIZEで呼び出されます。
+
+ @param [in]    bShow   表示状態
+ @param [in]    nStatus ステータス
+ */
+void CIUCommonInfoDlg::OnShowWindow(BOOL bShow, UINT nStatus)
+{
+	CDialog::OnShowWindow(bShow, nStatus);
+
+	if (m_inFindDialog != NULL && m_inFindDialog->IsTerminating() == FALSE) {
+		m_inFindDialog->DestroyWindow();
+		m_inFindDialog = NULL;
+
+	}
+}
+
+/*!
  @brief 情報の種類を設定します\n
 
  @param [in]    szType  情報タイプの設定
@@ -193,6 +247,14 @@ void CIUCommonInfoDlg::PerformInformationType()
 		pDialog->Create(CIUCommonComandDlg::IDD, this);
 		if (stOSver.dwMajorVersion < 6 || bAdminUser == TRUE) {
 			((CIUCommonComandDlg *) pDialog)->SetCommandLine(_T("cmd /c \"echo list volume | diskpart\""));
+		}
+		((CIUCommonComandDlg *) pDialog)->SetTitle(m_strType);
+	} else if (CString((LPCTSTR) IDS_MENU_SYSTEM_TASKINFO) == m_strType) {
+		// タスク情報
+		pDialog = new CIUCommonComandDlg();
+		pDialog->Create(CIUCommonComandDlg::IDD, this);
+		if (stOSver.dwMajorVersion < 6 || bAdminUser == TRUE) {
+			((CIUCommonComandDlg *) pDialog)->SetCommandLine(_T("tasklist /V /FO LIST"));
 		}
 		((CIUCommonComandDlg *) pDialog)->SetTitle(m_strType);
 	} else if (CString((LPCTSTR) IDS_MENU_SYSTEM_EVENTLOG) == m_strType) {
@@ -331,41 +393,64 @@ void CIUCommonInfoDlg::DisplayInformation(BOOL bInit)
 		if (m_pDialog == NULL) {
 			return;
 		}
+		CEdit *pEdit = ((CEdit *) GetDlgItem(IDD_IU_COM_INFO_RESULT_LABEL));
+		int nLineNum = pEdit->GetFirstVisibleLine();
+		int nSel = pEdit->GetSel();
+		int nLineIndex =  pEdit->LineIndex() + 1;
+		int nMaxLineNum = pEdit->GetLineCount();
+		BOOL bProcessed = FALSE;
 
 		CIUCommonComandDlg *pCommandDlg = dynamic_cast<CIUCommonComandDlg *>(m_pDialog);
-		if (pCommandDlg != NULL) {
+		if (bProcessed == FALSE && pCommandDlg != NULL) {
 			m_strResult = pCommandDlg->GetInformation(bInit);
 			UpdateData(FALSE);
-			return;
+
+			bProcessed = TRUE;
 		}
 
 		CIUCommonNumExecDlg *pNumExecDlg = dynamic_cast<CIUCommonNumExecDlg *>(m_pDialog);
-		if (pNumExecDlg != NULL) {
+		if (bProcessed == FALSE && pNumExecDlg != NULL) {
 			m_strResult = pNumExecDlg->GetInformation(bInit);
 			UpdateData(FALSE);
-			return;
+
+			bProcessed = TRUE;
 		}
 
 		CIUCommonHashCalcDlg *pHashCalcDlg = dynamic_cast<CIUCommonHashCalcDlg *>(m_pDialog);
-		if (pHashCalcDlg != NULL) {
+		if (bProcessed == FALSE && pHashCalcDlg != NULL) {
 			m_strResult = pHashCalcDlg->GetInformation(bInit);
 			UpdateData(FALSE);
-			return;
+
+			bProcessed = TRUE;
 		}
 
 		CIUCommonParamComandDlg *pParamCmdDlg = dynamic_cast<CIUCommonParamComandDlg *>(m_pDialog);
-		if (pParamCmdDlg != NULL) {
+		if (bProcessed == FALSE && pParamCmdDlg != NULL) {
 			m_strResult = pParamCmdDlg->GetInformation(bInit);
 			UpdateData(FALSE);
-			return;
+
+			bProcessed = TRUE;
 		}
 
 		CIUCommonFileDlg *pFileDlg = dynamic_cast<CIUCommonFileDlg *>(m_pDialog);
-		if (pFileDlg != NULL) {
+		if (bProcessed == FALSE && pFileDlg != NULL) {
 			m_strResult = pFileDlg->GetInformation(bInit);
 			UpdateData(FALSE);
-			return;
+
+			bProcessed = TRUE;
 		}
+
+		CRect editRect;
+		pEdit->GetWindowRect(&editRect);
+
+		CPoint lastLinePos = pEdit->PosFromChar(nMaxLineNum);
+		if (editRect.PtInRect(lastLinePos) == TRUE) {
+			nLineNum += pEdit->GetLineCount() - nMaxLineNum;
+			nLineNum = min(nLineNum, pEdit->GetLineCount());
+		}
+
+		pEdit->SetSel(nSel);
+		pEdit->LineScroll(nLineNum, HIWORD(nSel) - nLineIndex);
 	} catch (CException *pEx) {
 		TCHAR szErrorMessage[1024];
 		pEx->GetErrorMessage(szErrorMessage, sizeof(szErrorMessage) / sizeof(TCHAR));
@@ -374,4 +459,68 @@ void CIUCommonInfoDlg::DisplayInformation(BOOL bInit)
 		// メッセージの表示
 		AfxMessageBox(szErrorMessage);
 	}
+}
+
+LONG CIUCommonInfoDlg::OnFindReplace(WPARAM /*wParam*/, LPARAM lParam)
+{
+	CString wkss,str1,str2;
+
+	CFindReplaceDialog* pFileDlg = CFindReplaceDialog::GetNotifier(lParam);
+	UpdateData();
+	BOOL bSearchDown = pFileDlg->SearchDown();
+	BOOL bMatchCase = pFileDlg->MatchCase();
+
+	if(pFileDlg->IsTerminating()){
+		//-------------------
+		//閉じた時の処理
+		pFileDlg->DestroyWindow();
+		m_inFindDialog = NULL;
+	}
+	else if(pFileDlg->FindNext() && bSearchDown == TRUE){
+		//----------------------
+		//「次を検索」処理
+		CEdit *pEdit = ((CEdit *) GetDlgItem(IDD_IU_COM_INFO_RESULT_LABEL));
+
+		int nCurStartPos, nCurEndPos;
+		pEdit->GetSel(nCurStartPos, nCurEndPos);						//現在のカーソル位置取得
+
+		CString strFindValue = pFileDlg->GetFindString();				//検索文字列の取得
+		int nFindValueLength = strFindValue.GetLength();					
+		CString strTarget = m_strResult.Mid(nCurStartPos + 1);
+	
+		if (bMatchCase == FALSE) {
+			strFindValue.MakeLower();
+			strTarget.MakeLower();
+		}
+
+		int nFindIndex = strTarget.Find(strFindValue);					//文字列検索
+		if(nFindIndex != -1){
+			nCurStartPos = nCurStartPos + 1 + nFindIndex;
+			pEdit->SetSel(nCurStartPos, nCurStartPos + nFindValueLength);
+		}
+	} else if(pFileDlg->FindNext() && bSearchDown == FALSE){
+		//----------------------
+		//「次を検索」処理
+		CEdit *pEdit = ((CEdit *) GetDlgItem(IDD_IU_COM_INFO_RESULT_LABEL));
+
+		int nCurStartPos, nCurEndPos;
+		pEdit->GetSel(nCurStartPos, nCurEndPos);						//現在のカーソル位置取得
+
+		CString strFindValue = pFileDlg->GetFindString();				//検索文字列の取得
+		int nFindValueLength = strFindValue.GetLength();					
+		CString strTarget = m_strResult.Left(nCurStartPos + 1);
+
+		if (bMatchCase == FALSE) {
+			strFindValue.MakeLower();
+			strTarget.MakeLower();
+		}
+
+		int nFindIndex = strTarget.Find(strFindValue);					//文字列検索
+		if(nFindIndex != -1){
+			nCurStartPos = nCurStartPos + 1 + nFindIndex;
+			pEdit->SetSel(nCurStartPos, nCurStartPos + nFindValueLength);
+		}
+	}
+
+	return 1L;
 }

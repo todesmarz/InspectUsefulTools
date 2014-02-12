@@ -1,0 +1,1326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{1993e8a4-cafb-4962-bc4e-45f5dbb70b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\FileInfo">
+      <UniqueIdentifier>{3426f913-c2e6-44bb-9f56-c751558a204f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Memory">
+      <UniqueIdentifier>{c2ed130b-c3b5-403b-b92e-7672bb182af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Time">
+      <UniqueIdentifier>{06d10d43-3d59-445c-9247-66e3aac31799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\DummyFile">
+      <UniqueIdentifier>{6c7d78a6-92f0-4168-9e5a-f1fd71ae138f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Display">
+      <UniqueIdentifier>{6973f6fe-9302-4894-ae84-d65b3d67c784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Common">
+      <UniqueIdentifier>{a0e07dd9-8419-4622-b776-d314eeb3dd2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System">
+      <UniqueIdentifier>{875d0ccd-af0b-4a12-a963-1d5d0284ef26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\FileInfo">
+      <UniqueIdentifier>{e4a92570-c735-4483-9ddb-95636fa8fc8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Memory">
+      <UniqueIdentifier>{ba8be51a-43a5-4eb6-b1b1-00c628030a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Time">
+      <UniqueIdentifier>{56cc551b-2434-4c5e-b857-2fda49b0a2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Excel">
+      <UniqueIdentifier>{17681143-5c71-4fda-b2a1-3ede9ecfba96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DummyFile">
+      <UniqueIdentifier>{e0bf818b-b550-4693-92bd-743842625a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Display">
+      <UniqueIdentifier>{93c97626-b6bf-46c7-8fa7-ab2850ae8b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Common">
+      <UniqueIdentifier>{32d432e0-f2e8-49a5-b258-38fa85c35718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Image">
+      <UniqueIdentifier>{47ca0d29-667e-4306-8cdb-1d010781f719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Image">
+      <UniqueIdentifier>{792a2b2d-f622-4a14-b939-b17b126256fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DnpService.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="InspectUsefulTools.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="InspectUsefulToolsDlg.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ReplaceFile.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SysErrorDescriptDlg.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="SysProcessSpeedDlg.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="SysServiceInfoDlg.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInfoDlg.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="FileAttributeDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLockDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReplaceDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTailDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="FileTimeStampDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLeakGdiObjDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLeakMemoryDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLeakThreadDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLeakUserObjDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLockFileMappingDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemLockMutexDlg.cpp">
+      <Filter>ソース ファイル\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeChangeTimeDlg.cpp">
+      <Filter>ソース ファイル\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeStopWatchDlg.cpp">
+      <Filter>ソース ファイル\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="DummyFileSizeDlg.cpp">
+      <Filter>ソース ファイル\DummyFile</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoDlg.cpp">
+      <Filter>ソース ファイル\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonComandDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonFileDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonHashCalcDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonInfoDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonLockDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonMemoryLeakDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonNumExecDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonParamComandDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="IUCommonImageDlg.cpp">
+      <Filter>ソース ファイル\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageFontDlg.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageMathGraphDlg.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="FileFolderOpenDlg.cpp">
+      <Filter>ソース ファイル\FileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="IUSettingData.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCursorInfoDlg.cpp">
+      <Filter>ソース ファイル\Image</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DnpService.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InspectUsefulTools.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="InspectUsefulToolsDlg.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SysErrorDescriptDlg.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SysProcessInfoDlg.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SysProcessSpeedDlg.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="SysServiceInfoDlg.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInfoDlg.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="FileAttributeDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLockDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReplaceDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileTailDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileTimeStampDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLeakGdiObjDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLeakMemoryDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLeakThreadDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLeakUserObjDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLockFileMappingDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemLockMutexDlg.h">
+      <Filter>ヘッダー ファイル\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeChangeTimeDlg.h">
+      <Filter>ヘッダー ファイル\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeStopWatchDlg.h">
+      <Filter>ヘッダー ファイル\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAboveAverage.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAction.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CActions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAddIn.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAddIns.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAddIns2.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAdjustments.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAllowEditRange.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAllowEditRanges.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAppEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CApplication.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CArc.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CArcs.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAreas.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAutoCorrect.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAutoFilter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAutoRecover.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAxis.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CAxisTitle.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CBorder.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CBorders.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CButton0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CButtons.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCalculatedFields.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCalculatedItems.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCalculatedMember.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCalculatedMembers.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCalloutFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCellFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCharacters.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChart.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartArea.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartColorFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartFillFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartGroup.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartGroups.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartObject.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCharts.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartTitle.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CChartView.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCheckBox.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCheckBoxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorScale.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorScaleCriteria.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorScaleCriterion.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorStop.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CColorStops.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CComment.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CComments.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\Ccon.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CconCriteria.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CconCriterion.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CConditionValue.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CConnections.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CConnectorFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CconSet.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CconSetCondition.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CconSets.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CControlFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCorners.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCubeField.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCubeFields.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCustomProperties.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCustomProperty.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCustomView.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CCustomViews.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDatabar.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDataBarBorder.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDataLabel.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDataLabels.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDataTable.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDefaultWebOptions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDiagram.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDiagramNode.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDiagramNodeChildren.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDiagramNodes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialog0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialogFrame.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialogs.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialogSheet.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialogSheets.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDialogSheetView.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDisplayFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDisplayUnitLabel.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDocEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDownBars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDrawing.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDrawingObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDrawings.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDropDown.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDropDowns.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CDropLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CEditBox.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CEditBoxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CError.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CErrorBars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CErrorCheckingOptions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CErrors.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFileExportConverter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFileExportConverters.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFillFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFilter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFilters.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFloor.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFont0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFormatColor.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFormatCondition.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFormatConditions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CFreeformBuilder.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGlobal.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGraphic.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGridlines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGroupBox.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGroupBoxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGroupObject.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGroupObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CGroupShapes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHeaderFooter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHiLoLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHPageBreak.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHPageBreaks.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHyperlink.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CHyperlinks.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLabel.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLabels.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLeaderLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLegend.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLegendEntries.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLegendEntry.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLegendKey.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLine.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLinearGradient.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLineFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CLinkFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListBox0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListBoxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListColumn.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListColumns.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListDataFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListObject.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListRow.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CListRows.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMailer.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenu0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenuBar.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenuBars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenuItem.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenuItems.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMenus.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CModule.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CModules.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CModuleView.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CMultiThreadedCalculation.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CName.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CNames.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CNegativeBarFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\Cnterior.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CODBCConnection.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CODBCError.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CODBCErrors.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEDBConnection.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEDBError.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEDBErrors.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEObject.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEObjectEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COLEObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COptionButton.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COptionButtons.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COutline.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COval.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\COvals.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPage.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPages.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPageSetup.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPane.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPanes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CParameter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CParameters.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPhonetic.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPhonetics.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPicture.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPictureFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPictures.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotAxis.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotCache.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotCaches.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotCell.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotField.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotFields.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotFilter.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotFilters.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotFormula.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotFormulas.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotItem.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotItemList.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotItems.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotLayout.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotLine.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotLineCells.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotTable.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotTableChangeList.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPivotTables.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPlotArea.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPoint0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPoints.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CProtectedViewWindow.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CProtectedViewWindows.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CProtection.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPublishObject.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CPublishObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CQueryTable.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CQueryTables.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRange.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRanges.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRecentFile.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRecentFiles.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRectangle.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRectangles.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRectangularGradient.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRefreshEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CResearch.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRoutingSlip.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRTD.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRtdServer.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CRTDUpdateEvent.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CScenario.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CScenarios.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CScrollBar0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CScrollBars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSeries.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSeriesCollection.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSeriesLines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CServerViewableItems.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShadowFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShape.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShapeNode.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShapeNodes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShapeRange.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CShapes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSheets.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSheetViews.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicer.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerCache.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerCacheLevel.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerCacheLevels.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerCaches.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerItem.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerItems.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicerPivotTables.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSlicers.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTag.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTagAction.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTagActions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTagOptions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTagRecognizer.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTagRecognizers.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSmartTags.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSort.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSortField.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSortFields.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSoundNote.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkAxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkColor.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkHorizontalAxis.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkline.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparklineGroup.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparklineGroups.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkPoints.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSparkVerticalAxis.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSpeech.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSpellingOptions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSpinner.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CSpinners.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CStyle.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CStyles.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTab.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTableStyle.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTableStyleElement.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTableStyleElements.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTableStyles.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTextBox.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTextBoxes.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTextEffectFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTextFrame.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTextFrame2.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CThreeDFormat.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTickLabels.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CToolbar.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CToolbarButton.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CToolbarButtons.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CToolbars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTop10.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTreeviewControl.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTrendline.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CTrendlines.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CUniqueValues.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CUpBars.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CUsedObjects.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CUserAccess.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CUserAccessList.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CValidation.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CValueChange.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CVPageBreak.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CVPageBreaks.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWalls.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWatch.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWatches.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWebOptions.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWindow0.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWindows.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorkbook.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorkbookConnection.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorkbookEvents.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorkbooks.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorksheet.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorksheetFunction.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorksheets.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CWorksheetView.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlDataBinding.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlMap.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlMaps.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlNamespace.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlNamespaces.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlSchema.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXmlSchemas.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel\CXPath.h">
+      <Filter>ヘッダー ファイル\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="DummyFileSizeDlg.h">
+      <Filter>ヘッダー ファイル\DummyFile</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoDlg.h">
+      <Filter>ヘッダー ファイル\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonComandDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonFileDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonHashCalcDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonInfoDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonLockDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonMemoryLeakDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonNumExecDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonParamComandDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="IUCommonImageDlg.h">
+      <Filter>ヘッダー ファイル\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFontDlg.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageMathGraphDlg.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFolderOpenDlg.h">
+      <Filter>ヘッダー ファイル\FileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="IUSettingData.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCursorInfoDlg.h">
+      <Filter>ヘッダー ファイル\Image</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InspectUsefulTools.ico">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="res\InspectUsefulTools.rc2">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="res\SubTools.xls" />
+    <None Include="res\SubTools_en.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="InspectUsefulTools.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

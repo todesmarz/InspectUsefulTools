@@ -49,7 +49,6 @@ BOOL CIUCommonFileDlg::OnInitDialog()
 	::SHAutoComplete(::GetDlgItem(this->m_hWnd, IDD_IU_COM_FILE_FILEPATH_EDIT), SHACF_FILESYSTEM);
 	DragAcceptFiles();
 
-
 	return TRUE;
 }
 
@@ -168,13 +167,19 @@ void CIUCommonFileDlg::OnBnClickedIuComFileSelectFileButton()
 {
 	// すべてのファイルを対象
 	CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY | OFN_FILEMUSTEXIST , CString((LPCTSTR) IDS_IU_FILETYPE_DESCRIPT));
+	
+	CString strFilePath;
+	this->GetDlgItem(IDD_IU_COM_FILE_FILEPATH_EDIT)->GetWindowText(strFilePath);
+	if (strFilePath.IsEmpty() == false) {
+		PathRemoveFileSpec((LPTSTR)(LPCTSTR)strFilePath);
+		fileDlg.m_ofn.lpstrInitialDir = strFilePath;
+	}
+
 	if (fileDlg.DoModal() == IDOK) {
 		CString strFilePath = fileDlg.GetPathName();
 		this->GetDlgItem(IDD_IU_COM_FILE_FILEPATH_EDIT)->SetWindowText(strFilePath);
 
 		((CDialog *) this->GetDlgItem(IDD_IU_COM_FILE_EXEC_BUTTON))->EnableWindow(TRUE);
-
-		UpdateData(FALSE);
 	}
 }
 

@@ -46,7 +46,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=".\Excel"
-				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USE_MATH_DEFINES"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
@@ -152,7 +152,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Netapi32.lib "
+				AdditionalDependencies="Netapi32.lib Gdiplus.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -255,6 +255,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\FileFolderOpenDlg.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\FileLockDlg.cpp"
 					>
 				</File>
@@ -343,6 +347,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\IUCommonImageDlg.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\IUCommonInfoDlg.cpp"
 					>
 				</File>
@@ -363,6 +371,18 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="Image"
+				>
+				<File
+					RelativePath=".\ImageFontDlg.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ImageMathGraphDlg.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="ヘッダー ファイル"
@@ -374,11 +394,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\InspectUsefulTools.h"
+				RelativePath=".\ImageMathGraphDlg.h"
 				>
 			</File>
 			<File
-				RelativePath=".\InspectUsefulToolsDlg.h"
+				RelativePath=".\InspectUsefulTools.h"
 				>
 			</File>
 			<File
@@ -426,6 +446,10 @@
 				>
 				<File
 					RelativePath=".\FileAttributeDlg.h"
+					>
+				</File>
+				<File
+					RelativePath=".\FileFolderOpenDlg.h"
 					>
 				</File>
 				<File
@@ -1861,6 +1885,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\IUCommonImageDlg.h"
+					>
+				</File>
+				<File
 					RelativePath=".\IUCommonInfoDlg.h"
 					>
 				</File>
@@ -1878,6 +1906,18 @@
 				</File>
 				<File
 					RelativePath=".\IUCommonParamComandDlg.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Image"
+				>
+				<File
+					RelativePath=".\ImageFontDlg.h"
+					>
+				</File>
+				<File
+					RelativePath=".\InspectUsefulToolsDlg.h"
 					>
 				</File>
 			</Filter>

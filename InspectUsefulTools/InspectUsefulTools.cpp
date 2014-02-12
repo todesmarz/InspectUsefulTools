@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "InspectUsefulTools.h"
 #include "InspectUsefulToolsDlg.h"
+#include "IUSettingData.h"
 
 #include <locale>
 
@@ -52,6 +53,10 @@ BOOL CInspectUsefulToolsApp::InitInstance()
 	AfxInitRichEdit();
 	AfxInitRichEdit2();
 
+	Gdiplus::GdiplusStartupInput gdiSI;
+	ULONG_PTR gdiToken;
+	Gdiplus::GdiplusStartup(&gdiToken, &gdiSI, NULL);
+
 	::CoInitialize(NULL);
 	setlocale(LC_ALL, ".ACP");
 
@@ -61,6 +66,10 @@ BOOL CInspectUsefulToolsApp::InitInstance()
 		dlg.DoModal();
 	}
 
+	// 設定の保存
+	CIUSettingData::GetInstance().Save();
+
+	Gdiplus::GdiplusShutdown(gdiToken);
 	::CoUninitialize();
 
 	return FALSE;

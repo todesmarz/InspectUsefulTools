@@ -23,13 +23,13 @@ CReplaceFile::CReplaceFile(CString &strBeforeReplace, CString &strAfterReplace)
  @param [in]    strFilePath     ファイルパス
  @param [in]    strExtName      対象拡張子リスト
 */
-int CReplaceFile::Execute(CString &strFilePath, CString &strExtName)
+int CReplaceFile::Execute(CString &strFilePath, CString &strExtName, EReplaceFileEncoding encoding)
 {
 	if ( strFilePath.IsEmpty () == TRUE) {
 		return 0;
 	}
 
-	SearchFile(strFilePath, strExtName);
+	SearchFile(strFilePath, strExtName, encoding);
 
 	return m_nReplaceCount;
 }
@@ -40,7 +40,7 @@ int CReplaceFile::Execute(CString &strFilePath, CString &strExtName)
  @param [in]    strFilePath     ファイルパス
  @param [in]    strExtName      対象拡張子リスト
 */
-void CReplaceFile::SearchFile(CString &strFilePath, CString &strExtName)
+void CReplaceFile::SearchFile(CString &strFilePath, CString &strExtName, EReplaceFileEncoding encoding)
 {
 	CString strSearchFilePath = strFilePath + _T("\\*.???");
 
@@ -58,17 +58,17 @@ void CReplaceFile::SearchFile(CString &strFilePath, CString &strExtName)
 		 // ディレクトリなら内部のファイルを検索
 		 // それ以外なら対象の拡張子を判断し置換を行う。
 		 if (inFileFind.IsDirectory() == TRUE) {
-			 SearchFile(strFindFilePath, strExtName);
+			 SearchFile(strFindFilePath, strExtName, encoding);
 			continue;
 		 } else if(CheckExt(strFindFilePath, strExtName) == true) {
 			 CStringArray aryFileData;
 
-			 ReadFile(strFindFilePath, aryFileData);
+			 ReadFile(strFindFilePath, aryFileData, encoding);
 
 			 int nReplaceCount = RepaceFile(aryFileData);
 
 			 if (nReplaceCount != 0) {
-				 WriteFile(strFindFilePath, aryFileData);
+				 WriteFile(strFindFilePath, aryFileData, encoding);
 				 m_nReplaceCount += nReplaceCount;
 			 }
 		 }
@@ -106,11 +106,17 @@ bool CReplaceFile::CheckExt(CString &strFileName, CString &strExtName)
 
  @return true 正常終了 false 読み込みエラー
 */
-bool CReplaceFile::ReadFile(CString &strFilePath, CStringArray &aryFileData)
+bool CReplaceFile::ReadFile(CString &strFilePath, CStringArray &aryFileData, EReplaceFileEncoding encoding)
 {
-	CStdioFile inFile;
+	CString strMode;
+	ConvertToEncodeString(encoding, strMode);
+	strMode = _T("r") + strMode;
 
-	if (inFile.Open(strFilePath, CFile::modeRead) == TRUE) {
+	FILE *pFile;
+	_tfopen_s(&pFile, strFilePath, strMode);
+
+	if (pFile != NULL) {
+		CStdioFile inFile(pFile);
 		CString strReadData;
 
 		while ( inFile.ReadString(strReadData) != NULL) {
@@ -118,7 +124,6 @@ bool CReplaceFile::ReadFile(CString &strFilePath, CStringArray &aryFileData)
 		}
 
 		inFile.Close();
-
 	} else {
 		return false;
 	}
@@ -156,11 +161,18 @@ int CReplaceFile::RepaceFile(CStringArray &aryFileData)
 
  @return true 正常終了 false 書き込みエラー
 */
-bool CReplaceFile::WriteFile(CString &strFilePath, CStringArray &aryFileData)
+bool CReplaceFile::WriteFile(CString &strFilePath, CStringArray &aryFileData, EReplaceFileEncoding encoding)
 {
-	CStdioFile inFile;
+	CString strMode;
+	ConvertToEncodeString(encoding, strMode);
+	strMode = _T("w+") + strMode;
 
-	if (inFile.Open(strFilePath, CFile::modeCreate | CFile::modeWrite | CFile::shareDenyWrite) == TRUE) {
+	FILE *pFile;
+	_tfopen_s(&pFile, strFilePath, strMode);
+
+	if (pFile != NULL) {
+		CStdioFile inFile(pFile);
+
 		const INT_PTR nDataSize = aryFileData.GetSize();
 
 		for (INT_PTR nDataIndex = 0; nDataIndex < nDataSize; nDataIndex++) {
@@ -173,6 +185,34 @@ bool CReplaceFile::WriteFile(CString &strFilePath, CStringArray &aryFileData)
 
 	} else {
 		return false;
+	}
+
+	return true;
+}
+
+/*!
+ @brief エンコード文字列へ変換
+
+ @param [in]    strFilePath     ファイルパス
+ @param [in,out]    aryFileData 置換結果
+
+ @return true 正常終了 false 書き込みエラー
+*/
+bool CReplaceFile::ConvertToEncodeString(EReplaceFileEncoding encoding, CString &strEncodeString)
+{
+	switch (encoding) {
+	case ASCII:
+		strEncodeString = _T("");
+		break;
+	case EUC_JP:
+		strEncodeString = _T("");
+		break;
+	case UTF_8:
+		strEncodeString = _T(",ccs=utf-8");
+		break;
+	case Unicode:
+		strEncodeString = _T(",ccs=UTF-16LE");
+		break;
 	}
 
 	return true;

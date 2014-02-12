@@ -9,6 +9,9 @@
 #define new DEBUG_NEW
 #endif
 
+const ULONG CInspectUsefulToolsDlg::m_uWMNotifyIcon = ::RegisterWindowMessage(_T("__NotifyIconRegMsg__"));  
+const ULONG CInspectUsefulToolsDlg::m_uWMTaskBarCreated = ::RegisterWindowMessage(_T("__TaskbarCreated__"));  
+
 /*!
  @brief コンストラクタ
 
@@ -47,6 +50,9 @@ BEGIN_MESSAGE_MAP(CInspectUsefulToolsDlg, CDialog)
 	ON_NOTIFY(TVN_SELCHANGED, IDC_MENU_TREE, &CInspectUsefulToolsDlg::OnTvnSelchangedMenuTree)
 	ON_WM_DROPFILES()
 	ON_WM_CLOSE()
+	ON_REGISTERED_MESSAGE(m_uWMTaskBarCreated, &CInspectUsefulToolsDlg::OnTaskBarCreated)
+	ON_REGISTERED_MESSAGE(m_uWMNotifyIcon, &CInspectUsefulToolsDlg::OnNotifyTaskBarIcon)
+	ON_COMMAND(ID_MENU_CLOSE, &CInspectUsefulToolsDlg::OnMenuClose)
 END_MESSAGE_MAP()
 
 /*!
@@ -59,7 +65,7 @@ BOOL CInspectUsefulToolsDlg::OnInitDialog()
 	// このダイアログのアイコンを設定します。アプリケーションのメイン ウィンドウがダイアログでない場合、
 	//  Framework は、この設定を自動的に行います。
 	SetIcon(m_hIcon, TRUE);			// 大きいアイコンの設定
-	SetIcon(m_hIcon, FALSE);		// 小さいアイコンの設定
+	//SetIcon(m_hIcon, FALSE);		// 小さいアイコンの設定
 
 	// メニューの初期化
 	InitializeMenuTree();
@@ -217,6 +223,8 @@ void CInspectUsefulToolsDlg::OnClose()
 		CFile::Remove(strTempFilePath);
 	}
 
+	DeleteNotifyIcon();
+
 	CDialog::OnClose();
 }
 
@@ -263,6 +271,13 @@ void CInspectUsefulToolsDlg::OnSize(UINT nType, int cx, int cy)
 			((CDialog *) pDialog)->MoveWindow(rect);
 		}
 	}
+
+	if (nType == SIZE_MINIMIZED) {
+		this->ShowWindow(SW_HIDE);
+		AddNotifyIcon();
+	} else {
+		DeleteNotifyIcon();
+	}
 }
 
 /*!
@@ -279,6 +294,7 @@ BOOL CInspectUsefulToolsDlg::InitializeMenuTree()
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_ENVINFO), hSystemItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_NETWORKINFO), hSystemItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_DISKINFO), hSystemItem);
+	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_TASKINFO), hSystemItem);	
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_EVENTLOG), hSystemItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_USERINFO), hSystemItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_SYSTEM_USERLIST), hSystemItem);
@@ -299,6 +315,7 @@ BOOL CInspectUsefulToolsDlg::InitializeMenuTree()
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_FILE_FILE_TAIL), hFileItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_FILE_FILE_REPLACE), hFileItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_FILE_FILE_COMMONINFO), hFileItem);
+	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_FILE_FOLDER_OPEN), hFileItem);
 
 	// データ作成
 	HTREEITEM hDataItem = m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_DUMMY_FILE), hRootItem);
@@ -328,6 +345,12 @@ BOOL CInspectUsefulToolsDlg::InitializeMenuTree()
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_NETWORK_NETSTAT), hNetworkItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_NETWORK_ARP), hNetworkItem);
 	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_NETWORK_ROUTE), hNetworkItem);
+
+	// イメージ
+	HTREEITEM hImageItem = m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_IMAGE), hRootItem);
+	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_IMAGE_FONT), hImageItem);
+	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_IMAGE_MATH_GRAPH), hImageItem);
+	m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_IMAGE_CUR_INFO), hImageItem);
 
 	// 表示
 	HTREEITEM hMemoItem = m_inMenuTreeCtrl.InsertItem(CString((LPCTSTR) IDS_MENU_DISPLAY), hRootItem);
@@ -375,10 +398,16 @@ BOOL CInspectUsefulToolsDlg::InitializeContents()
 	m_mapInnerDlg.SetAt(strTypeName, &m_inSystemNetworkInfoDlg);
 
 	// ディスク情報
-	strTypeName = CString((LPCTSTR) IDS_MENU_SYSTEM_DISKINFO);
+	strTypeName = CString((LPCTSTR) IDS_MENU_SYSTEM_TASKINFO);
 	m_inSystemDiskInfoDlg.SetInformationType(strTypeName);
 	m_inSystemDiskInfoDlg.Create(CIUCommonInfoDlg::IDD, pWhd);
 	m_mapInnerDlg.SetAt(strTypeName, &m_inSystemDiskInfoDlg);
+	
+	// タスク情報
+	strTypeName = CString((LPCTSTR) IDS_MENU_SYSTEM_DISKINFO);
+	m_inTaskInfoDlg.SetInformationType(strTypeName);
+	m_inTaskInfoDlg.Create(CIUCommonInfoDlg::IDD, pWhd);
+	m_mapInnerDlg.SetAt(strTypeName, &m_inTaskInfoDlg);
 
 	// イベントログ
 	strTypeName = CString((LPCTSTR) IDS_MENU_SYSTEM_EVENTLOG);	
@@ -463,6 +492,11 @@ BOOL CInspectUsefulToolsDlg::InitializeContents()
 	m_inFileCommonOpenInfoDlg.SetInformationType(strTypeName);
 	m_inFileCommonOpenInfoDlg.Create(CIUCommonInfoDlg::IDD, pWhd);
 	m_mapInnerDlg.SetAt(strTypeName, &m_inFileCommonOpenInfoDlg);
+
+	// フォルダオープン
+	strTypeName = CString((LPCTSTR) IDS_MENU_FILE_FOLDER_OPEN);	
+	m_inFileFolderOpenDlg.Create(CFileFolderOpenDlg::IDD, pWhd);
+	m_mapInnerDlg.SetAt(strTypeName, &m_inFileFolderOpenDlg);
 
 
 	/// -----
@@ -575,6 +609,22 @@ BOOL CInspectUsefulToolsDlg::InitializeContents()
 	m_inNetworkCmdRouteDlg.Create(CIUCommonInfoDlg::IDD, pWhd);
 	m_mapInnerDlg.SetAt(strTypeName, &m_inNetworkCmdRouteDlg);
 
+	/// -----
+	/// イメージ
+	/// -----
+	// フォント
+	strTypeName = CString((LPCTSTR) IDS_MENU_IMAGE_FONT);	
+	m_inFontImage.Create(CIUCommonImageDlg::IDD, pWhd);
+	m_mapInnerDlg.SetAt(strTypeName, &m_inFontImage);
+	// 数式グラフ
+	strTypeName = CString((LPCTSTR) IDS_MENU_IMAGE_MATH_GRAPH);	
+	m_inMathGraphImage.Create(CIUCommonImageDlg::IDD, pWhd);
+	m_mapInnerDlg.SetAt(strTypeName, &m_inMathGraphImage);
+	// カーソル情報
+	strTypeName = CString((LPCTSTR) IDS_MENU_IMAGE_CUR_INFO);	
+	m_inCursorInfoImage.Create(CIUCommonImageDlg::IDD, pWhd);
+	m_mapInnerDlg.SetAt(strTypeName, &m_inCursorInfoImage);
+
 
 	/// -----
 	/// 表示
@@ -615,7 +665,7 @@ BOOL CInspectUsefulToolsDlg::ShowContents(CDialog *pDialog)
 	rect.right -= 10;
 	rect.bottom -= 9;
 
-	EnableThemeDialogTexture(pDialog->GetSafeHwnd(), ETDT_ENABLETAB);
+	//EnableThemeDialogTexture(pDialog->GetSafeHwnd(), ETDT_ENABLETAB);
 	pDialog->MoveWindow(&rect, FALSE);
 	pDialog->ShowWindow(SW_SHOW);
 
@@ -695,4 +745,93 @@ void CInspectUsefulToolsDlg::OnDropFiles(HDROP hDropInfo)
 	}
 
 	CDialog::OnDropFiles(hDropInfo);
+}
+
+
+/*!
+ @brief タスクトレイにアイコンを追加
+*/
+BOOL CInspectUsefulToolsDlg::AddNotifyIcon()  
+{  
+    CWinApp* pApp = AfxGetApp();  
+	HICON hIcon = (HICON)LoadImage(pApp->m_hInstance, MAKEINTRESOURCE(IDR_MAINFRAME),  IMAGE_ICON, 16, 16, 0);
+    m_cTaskTray.cbSize = sizeof(NOTIFYICONDATA);  
+    m_cTaskTray.hWnd = GetSafeHwnd();  
+    m_cTaskTray.uID = 1;  
+    m_cTaskTray.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;  
+    m_cTaskTray.hIcon= hIcon;  
+    m_cTaskTray.uCallbackMessage = m_uWMNotifyIcon;  
+	_tcscpy_s(m_cTaskTray.szTip, sizeof(m_cTaskTray.szTip) / sizeof(m_cTaskTray.szTip[0]), CString((LPCTSTR) IDS_APP_NAME));  
+    return Shell_NotifyIcon(NIM_ADD, &m_cTaskTray);  
+}  
+
+/*!
+ @brief タスクトレイにアイコンを削除
+*/
+BOOL CInspectUsefulToolsDlg::DeleteNotifyIcon()  
+{  
+    return Shell_NotifyIcon(NIM_DELETE, &m_cTaskTray);  
+}
+
+
+/** 
+ * タスクトレイメッセージハンドラ 
+ */  
+LRESULT CInspectUsefulToolsDlg::OnNotifyTaskBarIcon(WPARAM,LPARAM lParam)  
+{  
+    CMenu cMenu;  
+    POINT point;  
+  
+    switch (lParam)  
+    {  
+    case WM_RBUTTONUP:  
+        // TrackPopupMenu か TrackPopupMenuEx を呼び出す前に、ウィンドウを  
+        // フォアグラウンドウィンドウにしなければならない  
+        // (see the MSDN Article ID: Q135788 )  
+        SetForegroundWindow();  
+        if( cMenu.LoadMenu(IDR_POPUPMENU))  
+        {  
+            CMenu* pSubMenu = cMenu.GetSubMenu(0);  
+            if (pSubMenu != NULL)  
+            {  
+                pSubMenu->SetDefaultItem( 0, TRUE);  
+                GetCursorPos( &point );  
+                pSubMenu->TrackPopupMenu( TPM_LEFTALIGN | TPM_RIGHTBUTTON,  
+                                        point.x, point.y, this);  
+                pSubMenu->DestroyMenu();  
+            }  
+            cMenu.DestroyMenu();  
+        }  
+        // BUGFIX: 最後に次のクリックに反応できるようにメッセージをポスト  
+        // (see the MSDN Article ID: Q135788 )  
+        PostMessage( WM_NULL, 0, 0);  
+        break;  
+    case WM_LBUTTONDBLCLK:
+		this->ShowWindow(SW_SHOW);
+		this->PostMessage(WM_SYSCOMMAND, SC_RESTORE);
+        break;  
+    }  
+    return NULL;  
+}  
+
+/*!
+ @brief Win98 以降か IE4 デスクトップ がインストールされている環境であれば、 
+  タスクバーを再構築する場合に TaskbarCreated メッセージが送信される 
+ */  
+LRESULT CInspectUsefulToolsDlg::OnTaskBarCreated(WPARAM, LPARAM)  
+{
+    AddNotifyIcon();        // タスクバーアイコンの追加  
+  
+    return NULL;  
+}
+
+
+/*!
+ @brief タスクトレイメニューの閉じるメニュー選択イベント
+ */ 
+void CInspectUsefulToolsDlg::OnMenuClose()
+{
+	DeleteNotifyIcon();
+
+	this->OnOK();
 }

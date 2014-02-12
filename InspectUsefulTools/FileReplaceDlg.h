@@ -30,8 +30,11 @@ protected:
 	afx_msg void OnDropFiles(HDROP hDropInfo);
 	afx_msg void OnBnClickedFileReplacePathSelectButton();
 	afx_msg void OnBnClickedFileReplaceExecButton();
+	afx_msg void OnEnChangeFileReplacePathEdit();
 
 	DECLARE_MESSAGE_MAP()
-public:
-	afx_msg void OnEnChangeFileReplacePathEdit();
+
+private:
+	static int CALLBACK BrowseCallbackProc(HWND hwnd,UINT uMsg,LPARAM lParam,LPARAM lpData);
+
 };

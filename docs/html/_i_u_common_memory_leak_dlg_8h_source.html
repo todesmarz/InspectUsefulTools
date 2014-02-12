@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: InspectUsefulTools/IUCommonMemoryLeakDlg.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5239021c64793585e63d330b1b648e91.html">InspectUsefulTools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IUCommonMemoryLeakDlg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_u_common_memory_leak_dlg_8h.html">説明を見る。</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_c_i_u_common_memory_leak_dlg.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_i_u_common_memory_leak_dlg.html" title="共通メモリーリーク画面クラス">CIUCommonMemoryLeakDlg</a> : <span class="keyword">public</span> CDialog</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    DECLARE_DYNAMIC(<a class="code" href="class_c_i_u_common_memory_leak_dlg.html" title="共通メモリーリーク画面クラス">CIUCommonMemoryLeakDlg</a>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> m_nCurrentAllocMemory;        </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    BOOL m_bSetUnitCombo;                   </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a8c823781b9773abd5417adfa0184aa4d">   19</a></span>&#160;    CPtrArray <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a8c823781b9773abd5417adfa0184aa4d" title="単位設定可能フラグ">m_aryMemLeak</a>;                 </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a7afed3032b727afd1e08bb53c889038a" title="確保した領域の管理リスト">CIUCommonMemoryLeakDlg</a>(CWnd* pParent = NULL);   <span class="comment">// 標準コンストラクタ</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#aeb8bd0f33ed51820a7d4da9489338b3b" title="確保タイトル設定">SetAllocLabel</a>(LPCTSTR pszTitle);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a33a8c4ad2cdb329b0ac0ffeb72d6ba0b" title="解放タイトル設定">SetReleaseLabel</a>(LPCTSTR pszTitle);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a74de7517e266493b8fe305d87a06a850" title="単位の設定">SetUnitLabel</a>(CStringArray &amp;aryUnitString);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// ダイアログ データ</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">enum</span> { IDD = IDD_IU_COM_MEM_LEAK_DIALOG };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a5a68260d26a2a89a34bc81f1d4a8fb76" title="メッセージマップ定義">OnInitDialog</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#aaaa9a822ffff1ee6900934230c3c85ba" title="Windows 関数 TranslateMessage や DispatchMessage にディスパッチされる前に、ウィンドウ メッセージをフィルタ処理するには、この関数をオーバーライドします。  既...">PreTranslateMessage</a>(MSG* pMsg);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a52b2794348bb4c91ad24272006e08849" title="ダイアログ データの交換と有効性チェックのためにフレームワークが呼び出します。">DoDataExchange</a>(CDataExchange* pDX);    <span class="comment">// DDX/DDV サポート</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#af10f9528af82af56ab39579242ec3ac2" title="リサイズイベント  WM_SIZEで呼び出されます。">OnSize</a>(UINT nType, <span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cy);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a8537365e03814e663d0d5463e1136393" title="確保ボタンをクリックすると呼び出されます。">OnBnClickedIuComMemLeakButton</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_memory_leak_dlg.html#a915aff26b9cfdd19c7bef5d97e14870b" title="解放ボタンをクリックすると呼び出されます。">OnBnClickedIuComMemLeakReleaseButton</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> AllocMemory(<span class="keywordtype">long</span> <span class="keywordtype">long</span> nSize, <span class="keywordtype">int</span> nUnit) = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> ReleaseMemory() = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DECLARE_MESSAGE_MAP()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:16に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

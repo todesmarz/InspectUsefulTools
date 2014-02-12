@@ -1,0 +1,11 @@
+<map id="InspectUsefulTools/IUCommonMemoryLeakDlg.h" name="InspectUsefulTools/IUCommonMemoryLeakDlg.h">
+<area shape="rect" id="node2" href="$_inspect_useful_tools_dlg_8h.html" title="当ツールメイン画面クラスヘッダ" alt="" coords="191,187,360,229"/>
+<area shape="rect" id="node4" href="$_mem_leak_memory_dlg_8h.html" title="メモリーリーク(メモリー)画面クラスヘッダ" alt="" coords="391,96,554,139"/>
+<area shape="rect" id="node6" href="$_mem_leak_gdi_obj_dlg_8h.html" title="メモリーリーク(GDI オブジェクト)画面クラスヘッダ" alt="" coords="31,96,186,139"/>
+<area shape="rect" id="node7" href="$_mem_leak_user_obj_dlg_8h.html" title="メモリーリーク(User オブジェクト)画面クラスヘッダ" alt="" coords="578,96,741,139"/>
+<area shape="rect" id="node9" href="$_mem_leak_thread_dlg_8h.html" title="メモリーリーク(スレッド)画面クラスヘッダ" alt="" coords="210,96,366,139"/>
+<area shape="rect" id="node10" href="$_i_u_common_memory_leak_dlg_8cpp.html" title="共通メモリーリーク画面クラス" alt="" coords="766,96,980,139"/>
+<area shape="rect" id="node3" href="$_inspect_useful_tools_dlg_8cpp.html" title="当ツールメイン画面クラス" alt="" coords="184,277,366,320"/>
+<area shape="rect" id="node5" href="$_mem_leak_memory_dlg_8cpp.html" title="メモリーリーク(GDI オブジェクト)画面クラス" alt="" coords="384,187,561,229"/>
+<area shape="rect" id="node8" href="$_mem_leak_user_obj_dlg_8cpp.html" title="メモリーリーク(User オブジェクト)画面クラス" alt="" coords="585,187,762,229"/>
+</map>

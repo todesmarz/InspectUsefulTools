@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: InspectUsefulTools/IUCommonFileDlg.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5239021c64793585e63d330b1b648e91.html">InspectUsefulTools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IUCommonFileDlg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_u_common_file_dlg_8h.html">説明を見る。</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_c_i_u_common_file_dlg.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_i_u_common_file_dlg.html" title="共通ファイル情報表示画面クラス">CIUCommonFileDlg</a> : <span class="keyword">public</span> CDialog</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    DECLARE_DYNAMIC(<a class="code" href="class_c_i_u_common_file_dlg.html" title="共通ファイル情報表示画面クラス">CIUCommonFileDlg</a>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_c_i_u_common_file_dlg.html#a2066d12497fcccb07ea5e856457cefd1" title="コンストラクタ">CIUCommonFileDlg</a>(CWnd* pParent = NULL);   <span class="comment">// 標準コンストラクタ</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> CString GetInformation(BOOL bInit) = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> ExecuteOperation() = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> SetButtonText(LPCTSTR pszTitle);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> SetTitle(LPCTSTR pszTitle);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// ダイアログ データ</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">enum</span> { IDD = IDD_IU_COM_FILE_DIALOG };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_i_u_common_file_dlg.html#a88b5f7e780e1c20ccc77b34ffcb070f4" title="メッセージマップ定義">OnInitDialog</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_i_u_common_file_dlg.html#a48ab9661039f380bb5ae226388e6a7b8" title="Windows 関数 TranslateMessage や DispatchMessage にディスパッチされる前に、ウィンドウ メッセージをフィルタ処理するには、この関数をオーバーライドします。  既...">PreTranslateMessage</a>(MSG* pMsg);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#af4b55f886062717083bb0ed756cec78b" title="ダイアログ データの交換と有効性チェックのためにフレームワークが呼び出します。">DoDataExchange</a>(CDataExchange* pDX);    <span class="comment">// DDX/DDV サポート</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#ab67b76a10375bad3b78d5766fc2d1c72" title="リサイズイベント  WM_SIZEで呼び出されます。">OnSize</a>(UINT nType, <span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cy);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#a8219728d30b7d018abca4fab72045b57" title="D&amp;Dイベント  WM_SIZEで呼び出されます。">OnDropFiles</a>(HDROP hDropInfo);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#ae93db429b51f3d8280ddce1bf7aefd1c" title="ファイルパスを変更すると呼び出されます。">OnEnChangeIuComFileFilepathEdit</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#aedcb296c2164e3ff2ef207d8100d4175" title="ファイル選択ボタンをクリックすると呼び出されます。">OnBnClickedIuComFileSelectFileButton</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_i_u_common_file_dlg.html#a1ff1f8ba5b74b852ceafc07cf8a76b2c" title="実行ボタンをクリックすると呼び出されます。">OnBnClickedIuComFileExecButton</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    DECLARE_MESSAGE_MAP()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:15に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

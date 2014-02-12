@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "InspectUsefulTools.h"
 #include "FileTimeStampDlg.h"
+#include "IUSettingData.h"
 
 #include <io.h>
 
@@ -16,7 +17,7 @@ IMPLEMENT_DYNAMIC(CFileTimeStampDlg, CDialog)
 */
 CFileTimeStampDlg::CFileTimeStampDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CFileTimeStampDlg::IDD, pParent)
-	, m_strFileLockPath(_T(""))
+	, m_strFileTimeStampPath(_T(""))
 {
 
 }
@@ -29,7 +30,7 @@ CFileTimeStampDlg::CFileTimeStampDlg(CWnd* pParent /*=NULL*/)
 void CFileTimeStampDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_FILE_TIMESTAMP_PATH_EDIT, m_strFileLockPath);
+	DDX_Text(pDX, IDC_FILE_TIMESTAMP_PATH_EDIT, m_strFileTimeStampPath);
 }
 
 /*!
@@ -53,7 +54,14 @@ BOOL CFileTimeStampDlg::OnInitDialog()
 	// D&D設定
 	::SHAutoComplete(::GetDlgItem(this->m_hWnd, IDC_FILE_TIMESTAMP_PATH_EDIT), SHACF_FILESYSTEM);
 	DragAcceptFiles();
-
+	
+	m_strFileTimeStampPath = CIUSettingData::GetInstance().m_strFileTimeStampPath;
+	UpdateData(FALSE);
+	
+	if (m_strFileTimeStampPath.IsEmpty() == false) {
+		((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_SET_BUTTON))->EnableWindow(TRUE);
+		((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_RESET_BUTTON))->EnableWindow(TRUE);
+	}
 	return TRUE;
 }
 
@@ -79,8 +87,16 @@ void CFileTimeStampDlg::OnBnClickedFileTimestampPathSelectButton()
 {
 	// すべてのファイルを対象
 	CFileDialog fileDlg(FALSE, NULL, NULL, OFN_HIDEREADONLY , CString((LPCTSTR) IDS_IU_FILETYPE_DESCRIPT));
+
+	UpdateData(TRUE);
+	CString strFilePath = m_strFileTimeStampPath;
+	if (strFilePath.IsEmpty() == false) {
+		PathRemoveFileSpec((LPTSTR)(LPCTSTR)strFilePath);
+		fileDlg.m_ofn.lpstrInitialDir = strFilePath;
+	}
+
 	if (fileDlg.DoModal() == IDOK) {
-		m_strFileLockPath = fileDlg.GetPathName();
+		m_strFileTimeStampPath = fileDlg.GetPathName();
 
 		((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_SET_BUTTON))->EnableWindow(TRUE);
 		((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_RESET_BUTTON))->EnableWindow(TRUE);
@@ -96,7 +112,7 @@ void CFileTimeStampDlg::OnEnChangeFileTimestampPathEdit()
 	UpdateData(TRUE);
 
 	bool bEnable = false;
-	if (_taccess_s(m_strFileLockPath, 0) == 0) {
+	if (_taccess_s(m_strFileTimeStampPath, 0) == 0) {
 		bEnable = true;
 	}
 
@@ -144,8 +160,11 @@ void CFileTimeStampDlg::OnBnClickedFileTimestampSetButton()
 	inFileStatus.m_atime = CTime(stSystemDate.wYear, stSystemDate.wMonth, stSystemDate.wDay
 		, stSystemTime.wHour, stSystemTime.wMinute, stSystemTime.wSecond);
 
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strFileTimeStampPath = m_strFileTimeStampPath;
+
 	// タイムスタンプの設定
-	CFile::SetStatus(m_strFileLockPath, inFileStatus);	
+	CFile::SetStatus(m_strFileTimeStampPath, inFileStatus);	
 }
 
 /*!
@@ -157,7 +176,7 @@ void CFileTimeStampDlg::OnBnClickedFileTimestampResetButton()
 
 	// タイムスタンプの取得
 	CFileStatus inFileStatus;
-	if (CFile::GetStatus(m_strFileLockPath, inFileStatus) == false) {
+	if (CFile::GetStatus(m_strFileTimeStampPath, inFileStatus) == false) {
 		return;
 	}
 
@@ -185,6 +204,9 @@ void CFileTimeStampDlg::OnBnClickedFileTimestampResetButton()
 	inFileStatus.m_atime.GetAsSystemTime(stSystemTime);
 	pDateCtrl->SetTime(stSystemTime);
 	pTimeCtrl->SetTime(stSystemTime);
+	
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strFileTimeStampPath = m_strFileTimeStampPath;
 
 	UpdateData(FALSE);
 }
@@ -207,7 +229,7 @@ void CFileTimeStampDlg::OnDropFiles(HDROP hDropInfo)
 	TCHAR lpszFilePath[MAX_PATH];
 	DragQueryFile(hDropInfo, 0, lpszFilePath, MAX_PATH);
 
-	m_strFileLockPath = lpszFilePath;
+	m_strFileTimeStampPath = lpszFilePath;
 	((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_SET_BUTTON))->EnableWindow(TRUE);
 	((CDialog *) this->GetDlgItem(IDC_FILE_TIMESTAMP_RESET_BUTTON))->EnableWindow(TRUE);
 	UpdateData(FALSE);

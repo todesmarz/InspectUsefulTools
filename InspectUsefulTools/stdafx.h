@@ -38,7 +38,7 @@
 #include <afxcontrolbars.h>     // MFC におけるリボンとコントロール バーのサポート
 #include <afxdhtml.h>
 
-
+#include <gdiplus.h>
 
 #define WM_IUT_UPDATEDATA (WM_USER + 100)
 

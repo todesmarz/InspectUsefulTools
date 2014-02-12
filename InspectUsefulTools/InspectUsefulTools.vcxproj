@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1070E84D-4AED-479B-98D4-12519CA420E3}</ProjectGuid>
+    <RootNamespace>InspectUsefulTools</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\Excel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0411</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Netapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\Excel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0411</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Netapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DnpService.cpp" />
+    <ClCompile Include="FileFolderOpenDlg.cpp" />
+    <ClCompile Include="ImageCursorInfoDlg.cpp" />
+    <ClCompile Include="ImageFontDlg.cpp" />
+    <ClCompile Include="ImageMathGraphDlg.cpp" />
+    <ClCompile Include="InspectUsefulTools.cpp" />
+    <ClCompile Include="InspectUsefulToolsDlg.cpp" />
+    <ClCompile Include="IUCommonImageDlg.cpp" />
+    <ClCompile Include="IUSettingData.cpp" />
+    <ClCompile Include="ReplaceFile.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SysErrorDescriptDlg.cpp" />
+    <ClCompile Include="SysProcessSpeedDlg.cpp" />
+    <ClCompile Include="SysServiceInfoDlg.cpp" />
+    <ClCompile Include="UserInfoDlg.cpp" />
+    <ClCompile Include="FileAttributeDlg.cpp" />
+    <ClCompile Include="FileLockDlg.cpp" />
+    <ClCompile Include="FileReplaceDlg.cpp" />
+    <ClCompile Include="FileTailDlg.cpp" />
+    <ClCompile Include="FileTimeStampDlg.cpp" />
+    <ClCompile Include="MemLeakGdiObjDlg.cpp" />
+    <ClCompile Include="MemLeakMemoryDlg.cpp" />
+    <ClCompile Include="MemLeakThreadDlg.cpp" />
+    <ClCompile Include="MemLeakUserObjDlg.cpp" />
+    <ClCompile Include="MemLockFileMappingDlg.cpp" />
+    <ClCompile Include="MemLockMutexDlg.cpp" />
+    <ClCompile Include="TimeChangeTimeDlg.cpp" />
+    <ClCompile Include="TimeStopWatchDlg.cpp" />
+    <ClCompile Include="DummyFileSizeDlg.cpp" />
+    <ClCompile Include="MemoDlg.cpp" />
+    <ClCompile Include="IUCommonComandDlg.cpp" />
+    <ClCompile Include="IUCommonFileDlg.cpp" />
+    <ClCompile Include="IUCommonHashCalcDlg.cpp" />
+    <ClCompile Include="IUCommonInfoDlg.cpp" />
+    <ClCompile Include="IUCommonLockDlg.cpp" />
+    <ClCompile Include="IUCommonMemoryLeakDlg.cpp" />
+    <ClCompile Include="IUCommonNumExecDlg.cpp" />
+    <ClCompile Include="IUCommonParamComandDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DnpService.h" />
+    <ClInclude Include="FileFolderOpenDlg.h" />
+    <ClInclude Include="ImageCursorInfoDlg.h" />
+    <ClInclude Include="ImageFontDlg.h" />
+    <ClInclude Include="ImageMathGraphDlg.h" />
+    <ClInclude Include="InspectUsefulTools.h" />
+    <ClInclude Include="InspectUsefulToolsDlg.h" />
+    <ClInclude Include="IUCommonImageDlg.h" />
+    <ClInclude Include="IUSettingData.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="SysErrorDescriptDlg.h" />
+    <ClInclude Include="SysProcessInfoDlg.h" />
+    <ClInclude Include="SysProcessSpeedDlg.h" />
+    <ClInclude Include="SysServiceInfoDlg.h" />
+    <ClInclude Include="UserInfoDlg.h" />
+    <ClInclude Include="FileAttributeDlg.h" />
+    <ClInclude Include="FileLockDlg.h" />
+    <ClInclude Include="FileReplaceDlg.h" />
+    <ClInclude Include="FileTailDlg.h" />
+    <ClInclude Include="FileTimeStampDlg.h" />
+    <ClInclude Include="MemLeakGdiObjDlg.h" />
+    <ClInclude Include="MemLeakMemoryDlg.h" />
+    <ClInclude Include="MemLeakThreadDlg.h" />
+    <ClInclude Include="MemLeakUserObjDlg.h" />
+    <ClInclude Include="MemLockFileMappingDlg.h" />
+    <ClInclude Include="MemLockMutexDlg.h" />
+    <ClInclude Include="TimeChangeTimeDlg.h" />
+    <ClInclude Include="TimeStopWatchDlg.h" />
+    <ClInclude Include="Excel\CAboveAverage.h" />
+    <ClInclude Include="Excel\CAction.h" />
+    <ClInclude Include="Excel\CActions.h" />
+    <ClInclude Include="Excel\CAddIn.h" />
+    <ClInclude Include="Excel\CAddIns.h" />
+    <ClInclude Include="Excel\CAddIns2.h" />
+    <ClInclude Include="Excel\CAdjustments.h" />
+    <ClInclude Include="Excel\CAllowEditRange.h" />
+    <ClInclude Include="Excel\CAllowEditRanges.h" />
+    <ClInclude Include="Excel\CAppEvents.h" />
+    <ClInclude Include="Excel\CApplication.h" />
+    <ClInclude Include="Excel\CArc.h" />
+    <ClInclude Include="Excel\CArcs.h" />
+    <ClInclude Include="Excel\CAreas.h" />
+    <ClInclude Include="Excel\CAutoCorrect.h" />
+    <ClInclude Include="Excel\CAutoFilter.h" />
+    <ClInclude Include="Excel\CAutoRecover.h" />
+    <ClInclude Include="Excel\CAxes.h" />
+    <ClInclude Include="Excel\CAxis.h" />
+    <ClInclude Include="Excel\CAxisTitle.h" />
+    <ClInclude Include="Excel\CBorder.h" />
+    <ClInclude Include="Excel\CBorders.h" />
+    <ClInclude Include="Excel\CButton0.h" />
+    <ClInclude Include="Excel\CButtons.h" />
+    <ClInclude Include="Excel\CCalculatedFields.h" />
+    <ClInclude Include="Excel\CCalculatedItems.h" />
+    <ClInclude Include="Excel\CCalculatedMember.h" />
+    <ClInclude Include="Excel\CCalculatedMembers.h" />
+    <ClInclude Include="Excel\CCalloutFormat.h" />
+    <ClInclude Include="Excel\CCellFormat.h" />
+    <ClInclude Include="Excel\CCharacters.h" />
+    <ClInclude Include="Excel\CChart.h" />
+    <ClInclude Include="Excel\CChartArea.h" />
+    <ClInclude Include="Excel\CChartColorFormat.h" />
+    <ClInclude Include="Excel\CChartEvents.h" />
+    <ClInclude Include="Excel\CChartFillFormat.h" />
+    <ClInclude Include="Excel\CChartFormat.h" />
+    <ClInclude Include="Excel\CChartGroup.h" />
+    <ClInclude Include="Excel\CChartGroups.h" />
+    <ClInclude Include="Excel\CChartObject.h" />
+    <ClInclude Include="Excel\CChartObjects.h" />
+    <ClInclude Include="Excel\CCharts.h" />
+    <ClInclude Include="Excel\CChartTitle.h" />
+    <ClInclude Include="Excel\CChartView.h" />
+    <ClInclude Include="Excel\CCheckBox.h" />
+    <ClInclude Include="Excel\CCheckBoxes.h" />
+    <ClInclude Include="Excel\CColorFormat.h" />
+    <ClInclude Include="Excel\CColorScale.h" />
+    <ClInclude Include="Excel\CColorScaleCriteria.h" />
+    <ClInclude Include="Excel\CColorScaleCriterion.h" />
+    <ClInclude Include="Excel\CColorStop.h" />
+    <ClInclude Include="Excel\CColorStops.h" />
+    <ClInclude Include="Excel\CComment.h" />
+    <ClInclude Include="Excel\CComments.h" />
+    <ClInclude Include="Excel\Ccon.h" />
+    <ClInclude Include="Excel\CconCriteria.h" />
+    <ClInclude Include="Excel\CconCriterion.h" />
+    <ClInclude Include="Excel\CConditionValue.h" />
+    <ClInclude Include="Excel\CConnections.h" />
+    <ClInclude Include="Excel\CConnectorFormat.h" />
+    <ClInclude Include="Excel\CconSet.h" />
+    <ClInclude Include="Excel\CconSetCondition.h" />
+    <ClInclude Include="Excel\CconSets.h" />
+    <ClInclude Include="Excel\CControlFormat.h" />
+    <ClInclude Include="Excel\CCorners.h" />
+    <ClInclude Include="Excel\CCubeField.h" />
+    <ClInclude Include="Excel\CCubeFields.h" />
+    <ClInclude Include="Excel\CCustomProperties.h" />
+    <ClInclude Include="Excel\CCustomProperty.h" />
+    <ClInclude Include="Excel\CCustomView.h" />
+    <ClInclude Include="Excel\CCustomViews.h" />
+    <ClInclude Include="Excel\CDatabar.h" />
+    <ClInclude Include="Excel\CDataBarBorder.h" />
+    <ClInclude Include="Excel\CDataLabel.h" />
+    <ClInclude Include="Excel\CDataLabels.h" />
+    <ClInclude Include="Excel\CDataTable.h" />
+    <ClInclude Include="Excel\CDefaultWebOptions.h" />
+    <ClInclude Include="Excel\CDiagram.h" />
+    <ClInclude Include="Excel\CDiagramNode.h" />
+    <ClInclude Include="Excel\CDiagramNodeChildren.h" />
+    <ClInclude Include="Excel\CDiagramNodes.h" />
+    <ClInclude Include="Excel\CDialog0.h" />
+    <ClInclude Include="Excel\CDialogFrame.h" />
+    <ClInclude Include="Excel\CDialogs.h" />
+    <ClInclude Include="Excel\CDialogSheet.h" />
+    <ClInclude Include="Excel\CDialogSheets.h" />
+    <ClInclude Include="Excel\CDialogSheetView.h" />
+    <ClInclude Include="Excel\CDisplayFormat.h" />
+    <ClInclude Include="Excel\CDisplayUnitLabel.h" />
+    <ClInclude Include="Excel\CDocEvents.h" />
+    <ClInclude Include="Excel\CDownBars.h" />
+    <ClInclude Include="Excel\CDrawing.h" />
+    <ClInclude Include="Excel\CDrawingObjects.h" />
+    <ClInclude Include="Excel\CDrawings.h" />
+    <ClInclude Include="Excel\CDropDown.h" />
+    <ClInclude Include="Excel\CDropDowns.h" />
+    <ClInclude Include="Excel\CDropLines.h" />
+    <ClInclude Include="Excel\CEditBox.h" />
+    <ClInclude Include="Excel\CEditBoxes.h" />
+    <ClInclude Include="Excel\CError.h" />
+    <ClInclude Include="Excel\CErrorBars.h" />
+    <ClInclude Include="Excel\CErrorCheckingOptions.h" />
+    <ClInclude Include="Excel\CErrors.h" />
+    <ClInclude Include="Excel\CFileExportConverter.h" />
+    <ClInclude Include="Excel\CFileExportConverters.h" />
+    <ClInclude Include="Excel\CFillFormat.h" />
+    <ClInclude Include="Excel\CFilter.h" />
+    <ClInclude Include="Excel\CFilters.h" />
+    <ClInclude Include="Excel\CFloor.h" />
+    <ClInclude Include="Excel\CFont0.h" />
+    <ClInclude Include="Excel\CFormatColor.h" />
+    <ClInclude Include="Excel\CFormatCondition.h" />
+    <ClInclude Include="Excel\CFormatConditions.h" />
+    <ClInclude Include="Excel\CFreeformBuilder.h" />
+    <ClInclude Include="Excel\CGlobal.h" />
+    <ClInclude Include="Excel\CGraphic.h" />
+    <ClInclude Include="Excel\CGridlines.h" />
+    <ClInclude Include="Excel\CGroupBox.h" />
+    <ClInclude Include="Excel\CGroupBoxes.h" />
+    <ClInclude Include="Excel\CGroupObject.h" />
+    <ClInclude Include="Excel\CGroupObjects.h" />
+    <ClInclude Include="Excel\CGroupShapes.h" />
+    <ClInclude Include="Excel\CHeaderFooter.h" />
+    <ClInclude Include="Excel\CHiLoLines.h" />
+    <ClInclude Include="Excel\CHPageBreak.h" />
+    <ClInclude Include="Excel\CHPageBreaks.h" />
+    <ClInclude Include="Excel\CHyperlink.h" />
+    <ClInclude Include="Excel\CHyperlinks.h" />
+    <ClInclude Include="Excel\CLabel.h" />
+    <ClInclude Include="Excel\CLabels.h" />
+    <ClInclude Include="Excel\CLeaderLines.h" />
+    <ClInclude Include="Excel\CLegend.h" />
+    <ClInclude Include="Excel\CLegendEntries.h" />
+    <ClInclude Include="Excel\CLegendEntry.h" />
+    <ClInclude Include="Excel\CLegendKey.h" />
+    <ClInclude Include="Excel\CLine.h" />
+    <ClInclude Include="Excel\CLinearGradient.h" />
+    <ClInclude Include="Excel\CLineFormat.h" />
+    <ClInclude Include="Excel\CLines.h" />
+    <ClInclude Include="Excel\CLinkFormat.h" />
+    <ClInclude Include="Excel\CListBox0.h" />
+    <ClInclude Include="Excel\CListBoxes.h" />
+    <ClInclude Include="Excel\CListColumn.h" />
+    <ClInclude Include="Excel\CListColumns.h" />
+    <ClInclude Include="Excel\CListDataFormat.h" />
+    <ClInclude Include="Excel\CListObject.h" />
+    <ClInclude Include="Excel\CListObjects.h" />
+    <ClInclude Include="Excel\CListRow.h" />
+    <ClInclude Include="Excel\CListRows.h" />
+    <ClInclude Include="Excel\CMailer.h" />
+    <ClInclude Include="Excel\CMenu0.h" />
+    <ClInclude Include="Excel\CMenuBar.h" />
+    <ClInclude Include="Excel\CMenuBars.h" />
+    <ClInclude Include="Excel\CMenuItem.h" />
+    <ClInclude Include="Excel\CMenuItems.h" />
+    <ClInclude Include="Excel\CMenus.h" />
+    <ClInclude Include="Excel\CModule.h" />
+    <ClInclude Include="Excel\CModules.h" />
+    <ClInclude Include="Excel\CModuleView.h" />
+    <ClInclude Include="Excel\CMultiThreadedCalculation.h" />
+    <ClInclude Include="Excel\CName.h" />
+    <ClInclude Include="Excel\CNames.h" />
+    <ClInclude Include="Excel\CNegativeBarFormat.h" />
+    <ClInclude Include="Excel\Cnterior.h" />
+    <ClInclude Include="Excel\CODBCConnection.h" />
+    <ClInclude Include="Excel\CODBCError.h" />
+    <ClInclude Include="Excel\CODBCErrors.h" />
+    <ClInclude Include="Excel\COLEDBConnection.h" />
+    <ClInclude Include="Excel\COLEDBError.h" />
+    <ClInclude Include="Excel\COLEDBErrors.h" />
+    <ClInclude Include="Excel\COLEFormat.h" />
+    <ClInclude Include="Excel\COLEObject.h" />
+    <ClInclude Include="Excel\COLEObjectEvents.h" />
+    <ClInclude Include="Excel\COLEObjects.h" />
+    <ClInclude Include="Excel\COptionButton.h" />
+    <ClInclude Include="Excel\COptionButtons.h" />
+    <ClInclude Include="Excel\COutline.h" />
+    <ClInclude Include="Excel\COval.h" />
+    <ClInclude Include="Excel\COvals.h" />
+    <ClInclude Include="Excel\CPage.h" />
+    <ClInclude Include="Excel\CPages.h" />
+    <ClInclude Include="Excel\CPageSetup.h" />
+    <ClInclude Include="Excel\CPane.h" />
+    <ClInclude Include="Excel\CPanes.h" />
+    <ClInclude Include="Excel\CParameter.h" />
+    <ClInclude Include="Excel\CParameters.h" />
+    <ClInclude Include="Excel\CPhonetic.h" />
+    <ClInclude Include="Excel\CPhonetics.h" />
+    <ClInclude Include="Excel\CPicture.h" />
+    <ClInclude Include="Excel\CPictureFormat.h" />
+    <ClInclude Include="Excel\CPictures.h" />
+    <ClInclude Include="Excel\CPivotAxis.h" />
+    <ClInclude Include="Excel\CPivotCache.h" />
+    <ClInclude Include="Excel\CPivotCaches.h" />
+    <ClInclude Include="Excel\CPivotCell.h" />
+    <ClInclude Include="Excel\CPivotField.h" />
+    <ClInclude Include="Excel\CPivotFields.h" />
+    <ClInclude Include="Excel\CPivotFilter.h" />
+    <ClInclude Include="Excel\CPivotFilters.h" />
+    <ClInclude Include="Excel\CPivotFormula.h" />
+    <ClInclude Include="Excel\CPivotFormulas.h" />
+    <ClInclude Include="Excel\CPivotItem.h" />
+    <ClInclude Include="Excel\CPivotItemList.h" />
+    <ClInclude Include="Excel\CPivotItems.h" />
+    <ClInclude Include="Excel\CPivotLayout.h" />
+    <ClInclude Include="Excel\CPivotLine.h" />
+    <ClInclude Include="Excel\CPivotLineCells.h" />
+    <ClInclude Include="Excel\CPivotLines.h" />
+    <ClInclude Include="Excel\CPivotTable.h" />
+    <ClInclude Include="Excel\CPivotTableChangeList.h" />
+    <ClInclude Include="Excel\CPivotTables.h" />
+    <ClInclude Include="Excel\CPlotArea.h" />
+    <ClInclude Include="Excel\CPoint0.h" />
+    <ClInclude Include="Excel\CPoints.h" />
+    <ClInclude Include="Excel\CProtectedViewWindow.h" />
+    <ClInclude Include="Excel\CProtectedViewWindows.h" />
+    <ClInclude Include="Excel\CProtection.h" />
+    <ClInclude Include="Excel\CPublishObject.h" />
+    <ClInclude Include="Excel\CPublishObjects.h" />
+    <ClInclude Include="Excel\CQueryTable.h" />
+    <ClInclude Include="Excel\CQueryTables.h" />
+    <ClInclude Include="Excel\CRange.h" />
+    <ClInclude Include="Excel\CRanges.h" />
+    <ClInclude Include="Excel\CRecentFile.h" />
+    <ClInclude Include="Excel\CRecentFiles.h" />
+    <ClInclude Include="Excel\CRectangle.h" />
+    <ClInclude Include="Excel\CRectangles.h" />
+    <ClInclude Include="Excel\CRectangularGradient.h" />
+    <ClInclude Include="Excel\CRefreshEvents.h" />
+    <ClInclude Include="Excel\CResearch.h" />
+    <ClInclude Include="Excel\CRoutingSlip.h" />
+    <ClInclude Include="Excel\CRTD.h" />
+    <ClInclude Include="Excel\CRtdServer.h" />
+    <ClInclude Include="Excel\CRTDUpdateEvent.h" />
+    <ClInclude Include="Excel\CScenario.h" />
+    <ClInclude Include="Excel\CScenarios.h" />
+    <ClInclude Include="Excel\CScrollBar0.h" />
+    <ClInclude Include="Excel\CScrollBars.h" />
+    <ClInclude Include="Excel\CSeries.h" />
+    <ClInclude Include="Excel\CSeriesCollection.h" />
+    <ClInclude Include="Excel\CSeriesLines.h" />
+    <ClInclude Include="Excel\CServerViewableItems.h" />
+    <ClInclude Include="Excel\CShadowFormat.h" />
+    <ClInclude Include="Excel\CShape.h" />
+    <ClInclude Include="Excel\CShapeNode.h" />
+    <ClInclude Include="Excel\CShapeNodes.h" />
+    <ClInclude Include="Excel\CShapeRange.h" />
+    <ClInclude Include="Excel\CShapes.h" />
+    <ClInclude Include="Excel\CSheets.h" />
+    <ClInclude Include="Excel\CSheetViews.h" />
+    <ClInclude Include="Excel\CSlicer.h" />
+    <ClInclude Include="Excel\CSlicerCache.h" />
+    <ClInclude Include="Excel\CSlicerCacheLevel.h" />
+    <ClInclude Include="Excel\CSlicerCacheLevels.h" />
+    <ClInclude Include="Excel\CSlicerCaches.h" />
+    <ClInclude Include="Excel\CSlicerItem.h" />
+    <ClInclude Include="Excel\CSlicerItems.h" />
+    <ClInclude Include="Excel\CSlicerPivotTables.h" />
+    <ClInclude Include="Excel\CSlicers.h" />
+    <ClInclude Include="Excel\CSmartTag.h" />
+    <ClInclude Include="Excel\CSmartTagAction.h" />
+    <ClInclude Include="Excel\CSmartTagActions.h" />
+    <ClInclude Include="Excel\CSmartTagOptions.h" />
+    <ClInclude Include="Excel\CSmartTagRecognizer.h" />
+    <ClInclude Include="Excel\CSmartTagRecognizers.h" />
+    <ClInclude Include="Excel\CSmartTags.h" />
+    <ClInclude Include="Excel\CSort.h" />
+    <ClInclude Include="Excel\CSortField.h" />
+    <ClInclude Include="Excel\CSortFields.h" />
+    <ClInclude Include="Excel\CSoundNote.h" />
+    <ClInclude Include="Excel\CSparkAxes.h" />
+    <ClInclude Include="Excel\CSparkColor.h" />
+    <ClInclude Include="Excel\CSparkHorizontalAxis.h" />
+    <ClInclude Include="Excel\CSparkline.h" />
+    <ClInclude Include="Excel\CSparklineGroup.h" />
+    <ClInclude Include="Excel\CSparklineGroups.h" />
+    <ClInclude Include="Excel\CSparkPoints.h" />
+    <ClInclude Include="Excel\CSparkVerticalAxis.h" />
+    <ClInclude Include="Excel\CSpeech.h" />
+    <ClInclude Include="Excel\CSpellingOptions.h" />
+    <ClInclude Include="Excel\CSpinner.h" />
+    <ClInclude Include="Excel\CSpinners.h" />
+    <ClInclude Include="Excel\CStyle.h" />
+    <ClInclude Include="Excel\CStyles.h" />
+    <ClInclude Include="Excel\CTab.h" />
+    <ClInclude Include="Excel\CTableStyle.h" />
+    <ClInclude Include="Excel\CTableStyleElement.h" />
+    <ClInclude Include="Excel\CTableStyleElements.h" />
+    <ClInclude Include="Excel\CTableStyles.h" />
+    <ClInclude Include="Excel\CTextBox.h" />
+    <ClInclude Include="Excel\CTextBoxes.h" />
+    <ClInclude Include="Excel\CTextEffectFormat.h" />
+    <ClInclude Include="Excel\CTextFrame.h" />
+    <ClInclude Include="Excel\CTextFrame2.h" />
+    <ClInclude Include="Excel\CThreeDFormat.h" />
+    <ClInclude Include="Excel\CTickLabels.h" />
+    <ClInclude Include="Excel\CToolbar.h" />
+    <ClInclude Include="Excel\CToolbarButton.h" />
+    <ClInclude Include="Excel\CToolbarButtons.h" />
+    <ClInclude Include="Excel\CToolbars.h" />
+    <ClInclude Include="Excel\CTop10.h" />
+    <ClInclude Include="Excel\CTreeviewControl.h" />
+    <ClInclude Include="Excel\CTrendline.h" />
+    <ClInclude Include="Excel\CTrendlines.h" />
+    <ClInclude Include="Excel\CUniqueValues.h" />
+    <ClInclude Include="Excel\CUpBars.h" />
+    <ClInclude Include="Excel\CUsedObjects.h" />
+    <ClInclude Include="Excel\CUserAccess.h" />
+    <ClInclude Include="Excel\CUserAccessList.h" />
+    <ClInclude Include="Excel\CValidation.h" />
+    <ClInclude Include="Excel\CValueChange.h" />
+    <ClInclude Include="Excel\CVPageBreak.h" />
+    <ClInclude Include="Excel\CVPageBreaks.h" />
+    <ClInclude Include="Excel\CWalls.h" />
+    <ClInclude Include="Excel\CWatch.h" />
+    <ClInclude Include="Excel\CWatches.h" />
+    <ClInclude Include="Excel\CWebOptions.h" />
+    <ClInclude Include="Excel\CWindow0.h" />
+    <ClInclude Include="Excel\CWindows.h" />
+    <ClInclude Include="Excel\CWorkbook.h" />
+    <ClInclude Include="Excel\CWorkbookConnection.h" />
+    <ClInclude Include="Excel\CWorkbookEvents.h" />
+    <ClInclude Include="Excel\CWorkbooks.h" />
+    <ClInclude Include="Excel\CWorksheet.h" />
+    <ClInclude Include="Excel\CWorksheetFunction.h" />
+    <ClInclude Include="Excel\CWorksheets.h" />
+    <ClInclude Include="Excel\CWorksheetView.h" />
+    <ClInclude Include="Excel\CXmlDataBinding.h" />
+    <ClInclude Include="Excel\CXmlMap.h" />
+    <ClInclude Include="Excel\CXmlMaps.h" />
+    <ClInclude Include="Excel\CXmlNamespace.h" />
+    <ClInclude Include="Excel\CXmlNamespaces.h" />
+    <ClInclude Include="Excel\CXmlSchema.h" />
+    <ClInclude Include="Excel\CXmlSchemas.h" />
+    <ClInclude Include="Excel\CXPath.h" />
+    <ClInclude Include="DummyFileSizeDlg.h" />
+    <ClInclude Include="MemoDlg.h" />
+    <ClInclude Include="IUCommonComandDlg.h" />
+    <ClInclude Include="IUCommonFileDlg.h" />
+    <ClInclude Include="IUCommonHashCalcDlg.h" />
+    <ClInclude Include="IUCommonInfoDlg.h" />
+    <ClInclude Include="IUCommonLockDlg.h" />
+    <ClInclude Include="IUCommonMemoryLeakDlg.h" />
+    <ClInclude Include="IUCommonNumExecDlg.h" />
+    <ClInclude Include="IUCommonParamComandDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InspectUsefulTools.ico" />
+    <None Include="res\InspectUsefulTools.rc2" />
+    <None Include="res\SubTools.xls" />
+    <None Include="res\SubTools_en.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="InspectUsefulTools.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="InspectUsefulTools.rc" _x007B_6BF52A52-394A-11D3-B153-00C04F79FAA6_x007D_="COcx1" _x007B_CA8A9780-280D-11CF-A24D-444553540000_x007D_="CPdf1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

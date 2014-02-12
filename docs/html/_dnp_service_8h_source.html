@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: InspectUsefulTools/DnpService.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5239021c64793585e63d330b1b648e91.html">InspectUsefulTools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DnpService.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dnp_service_8h.html">説明を見る。</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;winsvc.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="_dnp_service_8h.html#a6e27516a6c30a316bed8eb9dd1dee615">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="_dnp_service_8h.html#a6e27516a6c30a316bed8eb9dd1dee615" title="サービスステータス列挙体">EChangeServiceStatus_</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Start,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Stop,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Restart,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} EChangeServiceStatus;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="struct_s_service_info__.html">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_s_service_info__.html" title="サービス情報構造体">SServiceInfo_</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    CString strDispName;        </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="struct_s_service_info__.html#aede760f2a708481cfd7cb8a19df0424d">   27</a></span>&#160;    CString <a class="code" href="struct_s_service_info__.html#aede760f2a708481cfd7cb8a19df0424d" title="表示名称">strServiceName</a>;     </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="struct_s_service_info__.html#a5689591e94451651e2841ea7ae90ee9f">   28</a></span>&#160;    CString <a class="code" href="struct_s_service_info__.html#a5689591e94451651e2841ea7ae90ee9f" title="サービス名称">strDescript</a>;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="struct_s_service_info__.html#a5406a31f052c4e86fe4cc54de4d2c806">   29</a></span>&#160;    CString <a class="code" href="struct_s_service_info__.html#a5406a31f052c4e86fe4cc54de4d2c806" title="サービス説明">strPath</a>;            </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="struct_s_service_info__.html#ad622b08c6030406de712f73b4ff1019b">   30</a></span>&#160;    CString <a class="code" href="struct_s_service_info__.html#ad622b08c6030406de712f73b4ff1019b" title="サービス実行ファイルパス">strStatus</a>;          </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <a class="code" href="struct_s_service_info__.html" title="サービス情報構造体">SServiceInfo</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="class_c_dnp_service.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_dnp_service.html" title="サービス操作クラス">CDnpService</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> m_bCancel;                                 </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    CComAutoCriticalSection m_secbCancel;           </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    CComAutoCriticalSection m_secServiceProcess;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    CString m_strServiceName;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SC_HANDLE m_hManager;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SC_HANDLE m_hService;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    DWORD m_dwWaitHint;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="struct_s_service_info__.html" title="サービス情報構造体">SServiceInfo</a> m_stServiceInfo;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> m_bChaningProcess;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_c_dnp_service.html#af29d016aa5edde8d4ca46cafb3129840" title="コンストラクタ">CDnpService</a>(<a class="code" href="struct_s_service_info__.html" title="サービス情報構造体">SServiceInfo</a> &amp;stServiceInfo);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_c_dnp_service.html#acc19a61e25f47fec280882c73949338c" title="デストラクタ">~CDnpService</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a98fe34448f3e6dd3734abf5207cddd03" title="サービスの状態変更  　中断したい場合はIsStateChangeCancel(true,true)を呼び出す">IsStateChangeCancel</a>(<span class="keywordtype">bool</span> bSave=<span class="keyword">false</span>,<span class="keywordtype">bool</span> bNewValue=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    DWORD <a class="code" href="class_c_dnp_service.html#aa078e0571306894ac6dd208beed0bd6c" title="サービスステータスの取得">GetServiceStatus</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a0b8862ae084266b62f4f6d85236efd56" title="サービスが動作中か判断">IsRunning</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a6e83911690241bae5f9672cbf9899840" title="サービスが停止か判断">IsStopped</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a30bf950d3dc7e987bce87e95c151ecea" title="サービスが一時停止か判断">IsPaused</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a21deaf920031915c7e7300224debf78c" title="サービスのステータスが変更中か判断">IsStatusChanging</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a1d0fc610e6e2d23f8daf48bd78991bd4" title="サービスのステータス変更">ChangeStatus</a>(EChangeServiceStatus eStatus);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#ac5d472f83a5d5f6505c252136efa06d1" title="サービスを開く">OpenDnpService</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#aa945a733ae16fb3e0b99a716cf066350" title="サービスを閉じる">CloseDnpService</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#afe324ccf31b64485e4c79c111e221555" title="サービス情報取得">GetServiceInfo</a>(<a class="code" href="struct_s_service_info__.html" title="サービス情報構造体">SServiceInfo</a> &amp;stServiceInfo);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_dnp_service.html#a4afa673480f8baf4a46083b85f8e97a9" title="サービス一覧取得">GetServiceList</a>(CArray&lt;SServiceInfo&gt; &amp;aryServiceInfoList);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> StartDnpService();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> StopDnpService();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> UINT ChangeStatusThread(LPVOID pParam);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:15に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

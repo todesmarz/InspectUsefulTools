@@ -1,0 +1,6 @@
+<map id="CIUCommonMemoryLeakDlg" name="CIUCommonMemoryLeakDlg">
+<area shape="rect" id="node3" href="$class_c_mem_leak_gdi_obj_dlg.html" title="メモリーリーク(GDI オブジェクト)画面クラス" alt="" coords="4,154,155,182"/>
+<area shape="rect" id="node4" href="$class_c_mem_leak_memory_dlg.html" title="メモリーリーク(メモリー)画面クラス" alt="" coords="180,154,337,182"/>
+<area shape="rect" id="node5" href="$class_c_mem_leak_thread_dlg.html" title="メモリーリーク(スレッド)画面クラス" alt="" coords="361,154,512,182"/>
+<area shape="rect" id="node6" href="$class_c_mem_leak_user_obj_dlg.html" title="メモリーリーク(User オブジェクト)画面クラス" alt="" coords="537,154,695,182"/>
+</map>

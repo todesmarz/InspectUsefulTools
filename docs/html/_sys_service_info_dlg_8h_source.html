@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: InspectUsefulTools/SysServiceInfoDlg.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5239021c64793585e63d330b1b648e91.html">InspectUsefulTools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SysServiceInfoDlg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_sys_service_info_dlg_8h.html">説明を見る。</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;afxwin.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dnp_service_8h.html" title="サービス操作クラスヘッダ">DnpService.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_c_sys_service_info_dlg.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_sys_service_info_dlg.html" title="サービス情報表示画面クラス">CSysServiceInfoDlg</a> : <span class="keyword">public</span> CDialog</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    CComboBox m_inServiceNameCombo;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    CArray&lt;SServiceInfo&gt; m_aryServiceInfoList;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_c_dnp_service.html" title="サービス操作クラス">CDnpService</a> *m_pDnpService;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    CString m_strServiceDescription;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    CString m_strServiceExePath;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    CString m_strServiceStatus;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    DECLARE_DYNAMIC(<a class="code" href="class_c_sys_service_info_dlg.html" title="サービス情報表示画面クラス">CSysServiceInfoDlg</a>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_c_sys_service_info_dlg.html#a648f2b645a46751af262377eea5a4183" title="コンストラクタ">CSysServiceInfoDlg</a>(CWnd* pParent = NULL);   <span class="comment">// 標準コンストラクタ</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c_sys_service_info_dlg.html#af3bd1ec199a5482ded68880669722280" title="デストラクタ">~CSysServiceInfoDlg</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// ダイアログ データ</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">enum</span> { IDD = IDD_SYS_SERVICE_INFO_DIALOG };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_sys_service_info_dlg.html#adae99e2457caf8446a9a78285371d324" title="メッセージマップ定義">OnInitDialog</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_sys_service_info_dlg.html#ad3b7639c9bdc19794f64d1155fe1ae4f" title="Windows 関数 TranslateMessage や DispatchMessage にディスパッチされる前に、ウィンドウ メッセージをフィルタ処理するには、この関数をオーバーライドします。  既...">PreTranslateMessage</a>(MSG* pMsg);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#a84fd4ff8cc9aaf184c0426b5afad95c9" title="ダイアログ データの交換と有効性チェックのためにフレームワークが呼び出します。">DoDataExchange</a>(CDataExchange* pDX);    <span class="comment">// DDX/DDV サポート</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#a5a1291f6744a51d3abe92c0c47fca867" title="コンボボックスの選択が変更された時に呼び出されます。">OnCbnSelchangeSysServiceInfoNameCombo</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#a8ad15788a6456e52938659e543934510" title="サービス停止ボタンをクリックすると呼び出されます。">OnBnClickedSysServiceInfoStopButton</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#ad0d3f0c41f32e6a2e97fa71fc14e855e" title="サービス再起動ボタンをクリックすると呼び出されます。">OnBnClickedSysServiceInfoRestartButton</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#a67026fa4127f7eeaebcb26c4310dad73" title="サービス開始ボタンをクリックすると呼び出されます。">OnBnClickedSysServiceInfoStartButton</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    afx_msg <span class="keywordtype">void</span> <a class="code" href="class_c_sys_service_info_dlg.html#a8c1a682fb952a34db76ee3ca0b88fbe1" title="タイーマーで呼び出されます。">OnTimer</a>(UINT_PTR nIDEvent);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    DECLARE_MESSAGE_MAP()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:16に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

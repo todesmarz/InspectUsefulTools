@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: InspectUsefulTools/SysErrorDescriptDlg.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+      <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5239021c64793585e63d330b1b648e91.html">InspectUsefulTools</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SysErrorDescriptDlg.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_sys_error_descript_dlg_8h.html">説明を見る。</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;﻿</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;resource.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_i_u_common_num_exec_dlg_8h.html" title="共通指定回数実行画面クラスヘッダ">IUCommonNumExecDlg.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="struct_s_error_info_data__.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_s_error_info_data__.html">SErrorInfoData_</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> nErrorNo;       </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="struct_s_error_info_data__.html#ae979df4cd6c0286a296351aedcd7fb58">   15</a></span>&#160;    LPCTSTR <a class="code" href="struct_s_error_info_data__.html#ae979df4cd6c0286a296351aedcd7fb58" title="エラー番号">szDetail</a>;   </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;} <a class="code" href="struct_s_error_info_data.html" title="サービス情報構造体">SErrorInfoData</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <a class="code" href="struct_s_error_info_data.html" title="サービス情報構造体">SErrorInfoData</a> SErrorInfoDataTbl[] = {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// HTTP Status Code</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {100, _T(<span class="stringliteral">&quot;HTTP : クライアントが要求を継続できることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {101, _T(<span class="stringliteral">&quot;HTTP : プロトコル バージョンまたはプロトコルが変更されていることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {200, _T(<span class="stringliteral">&quot;HTTP : 要求が成功し、要求された情報が応答で返されたことを示します。\r\n これは受信される最も一般的なステータス コードです\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {201, _T(<span class="stringliteral">&quot;HTTP : 応答が送信される前に、要求によって新しいリソースが作成されたことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {202, _T(<span class="stringliteral">&quot;HTTP : 要求が追加の処理のために受け入れられたことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {203, _T(<span class="stringliteral">&quot;HTTP : 返されたメタ情報が、元のサーバではなくキャッシュされたコピーから取得されたもので、正しくない可能性があることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {204, _T(<span class="stringliteral">&quot;HTTP : 要求が正常に処理され、応答が意図的に空白になっていることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {205, _T(<span class="stringliteral">&quot;HTTP : クライアントが現在のリソースを再び読み込むのではなく、リセットする必要があることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {206, _T(<span class="stringliteral">&quot;HTTP : 応答が GET 要求によって要求された応答の一部であることを示します。これにはバイト範囲が含まれます\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {300, _T(<span class="stringliteral">&quot;HTTP : 要求された情報に複数の表現があることを示します。\r\n 既定のアクションでは、このステータスをリダイレクトとして扱い、この応答と関連付けられた Location ヘッダの内容に従います\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {301, _T(<span class="stringliteral">&quot;HTTP : 要求された情報が Location ヘッダで指定される URI に移動したことを示します。\r\n このステータスを受信したときの既定のアクションは、応答に関連付けられている Location ヘッダの追跡です。\r\n 元の要求メソッドが POST の場合、リダイレクトされた要求は GET メソッドを使用します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {302, _T(<span class="stringliteral">&quot;HTTP : 要求された情報が Location ヘッダで指定される URI にあることを示します。\r\n このステータスを受信したときの既定のアクションは、応答に関連付けられている Location ヘッダの追跡です。\r\n 元の要求メソッドが POST の場合、リダイレクトされた要求は GET メソッドを使用します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {303, _T(<span class="stringliteral">&quot;HTTP : POST の結果として、Location ヘッダで指定された URI にクライアントを自動的にリダイレクトします。\r\n Location ヘッダで指定されるリソースへの要求は、GET で行います\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {304, _T(<span class="stringliteral">&quot;HTTP : クライアントのキャッシュされたコピーが最新のものであることを示します。\r\n リソースの内容は転送されません\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {305, _T(<span class="stringliteral">&quot;HTTP : 要求が Location ヘッダで指定される URI でプロキシ サーバを使用する必要があることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {306, _T(<span class="stringliteral">&quot;HTTP : Unused\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {307, _T(<span class="stringliteral">&quot;HTTP : 要求された情報が Location ヘッダで指定される URI にあることを示します。\r\n このステータスを受信したときの既定のアクションは、応答に関連付けられている Location ヘッダの追跡です。\r\n 元の要求メソッドが POST の場合、リダイレクトされた要求も POST メソッドを使用します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {400, _T(<span class="stringliteral">&quot;HTTP : サーバが要求を理解できないことを示します。\r\n BadRequest は、他のエラーが適用されない場合や、正確なエラーを確認できないか、独自のエラー コードがない場合に送信されます\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {401, _T(<span class="stringliteral">&quot;HTTP : 要求されたリソースが認証を要求することを示します。\r\n WWW-Authenticate ヘッダには、認証を実行する方法の詳細が格納されます\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {402, _T(<span class="stringliteral">&quot;HTTP : Payment Required\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {403, _T(<span class="stringliteral">&quot;HTTP : サーバが要求の実行を拒否していることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {404, _T(<span class="stringliteral">&quot;HTTP : 要求されたリソースがサーバに存在していないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {405, _T(<span class="stringliteral">&quot;HTTP : 要求されたリソースがサーバに存在していないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {406, _T(<span class="stringliteral">&quot;HTTP : クライアントが Accept ヘッダでリソースの利用可能な任意の表現を受け入れないことを指定していることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {407, _T(<span class="stringliteral">&quot;HTTP : 要求されたプロキシが認証を要求することを示します。\r\n Proxy-authenticate ヘッダには、認証を実行する方法の詳細が格納されます\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {408, _T(<span class="stringliteral">&quot;HTTP : サーバが要求を予期している時間内にクライアントが要求を送信しなかったことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {409, _T(<span class="stringliteral">&quot;HTTP : サーバ上の競合のために要求を実行できないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {410, _T(<span class="stringliteral">&quot;HTTP : 要求されたリソースが利用できないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {411, _T(<span class="stringliteral">&quot;HTTP : 必要な Content-length ヘッダがないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {412, _T(<span class="stringliteral">&quot;HTTP : この要求で設定された条件が満たされず、要求を実行できないことを示します。\r\n 条件は、If-Match、If-None-Match、If-Unmodified-Since などの条件要求ヘッダで設定します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {413, _T(<span class="stringliteral">&quot;HTTP : 要求が大きすぎて、サーバで処理できないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {414, _T(<span class="stringliteral">&quot;HTTP : URI が長すぎることを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {415, _T(<span class="stringliteral">&quot;HTTP : その要求の種類がサポートされていないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {416, _T(<span class="stringliteral">&quot;HTTP : リソースから要求されたデータの範囲を返すことができないことを示します。\r\n その原因は、範囲の先頭がリソースの先頭より前であるか、範囲の末尾がリソースの末尾より後ろであるかのいずれかです\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {417, _T(<span class="stringliteral">&quot;HTTP : サーバが Expect ヘッダで指定された要求を満たすことができないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {500, _T(<span class="stringliteral">&quot;HTTP : サーバで一般的なエラーが発生したことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {501, _T(<span class="stringliteral">&quot;HTTP : サーバが要求された機能をサポートしていないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {502, _T(<span class="stringliteral">&quot;HTTP : 中間プロキシ サーバが別のプロキシまたは元のサーバから無効な応答を受け取ったことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {503, _T(<span class="stringliteral">&quot;HTTP : 高い負荷または保守のため、サーバを一時的に利用できないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {504, _T(<span class="stringliteral">&quot;HTTP : 中間プロキシ サーバが別のプロキシまたは元のサーバからの応答を待機している間にタイムアウトしたことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {505, _T(<span class="stringliteral">&quot;HTTP : 要求された HTTP バージョンがサーバでサポートされていないことを示します\r\n&quot;</span>)},</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {0, NULL}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_c_sys_error_descript_dlg.html">   76</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_sys_error_descript_dlg.html" title="処理時間計測画面クラス">CSysErrorDescriptDlg</a> : <span class="keyword">public</span> <a class="code" href="class_c_i_u_common_num_exec_dlg.html" title="共通指定回数実行画面クラス">CIUCommonNumExecDlg</a></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="class_c_sys_error_descript_dlg.html#a1c218b49407d25cb3f1b5f6f0a734e14" title="コンストラクタ">CSysErrorDescriptDlg</a>(CWnd* pParent = NULL);   <span class="comment">// 標準コンストラクタ</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> CString <a class="code" href="class_c_sys_error_descript_dlg.html#a341bbeb9a833aba420a4c167cdbfb058" title="情報取得  指定コマンドを実行して情報を取得します。">GetInformation</a>(BOOL bInit);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> BOOL <a class="code" href="class_c_sys_error_descript_dlg.html#a667dad3a0acc195f3dedb0b059df1634" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。">OnInitDialog</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:16に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

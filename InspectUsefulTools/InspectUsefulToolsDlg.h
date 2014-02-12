@@ -13,6 +13,7 @@
 #include "FileAttributeDlg.h"
 #include "FileTailDlg.h"
 #include "FileReplaceDlg.h"
+#include "FileFolderOpenDlg.h"
 #include "DummyFileSizeDlg.h"
 #include "MemLeakMemoryDlg.h"
 #include "MemLeakGdiObjDlg.h"
@@ -23,6 +24,10 @@
 #include "TimeChangeTimeDlg.h"
 #include "TimeStopWatchDlg.h"
 #include "MemoDlg.h"
+
+#include "ImageFontDlg.h"
+#include "ImageMathGraphDlg.h"
+#include "ImageCursorInfoDlg.h"
 
 #include "CApplication.h"
 #include "CWorkbooks.h"
@@ -53,6 +58,7 @@ private:
 	CIUCommonInfoDlg m_inSystemEnvInfoDlg;				/// 環境変数画面
 	CIUCommonInfoDlg m_inSystemNetworkInfoDlg;			/// ネットワーク情報画面
 	CIUCommonInfoDlg m_inSystemDiskInfoDlg;				/// ディスク情報画面
+	CIUCommonInfoDlg m_inTaskInfoDlg;					/// タスク情報画面
 	CIUCommonInfoDlg m_inSystemEventLogDlg;				/// イベントログ画面
 	CUserInfoDlg m_inUserInfoDlg;						/// ユーザ情報画面
 	CIUCommonInfoDlg m_inSystemUserListDlg;				/// ユーザ一覧画面
@@ -66,6 +72,7 @@ private:
 	CIUCommonInfoDlg m_inFileTailDlg;					/// ファイル監視画面
 	CFileReplaceDlg m_inFileReplaceDlg;					/// ファイル置換画面
 	CIUCommonInfoDlg m_inFileCommonOpenInfoDlg;			/// 共有ファイル操作情報画面
+	CFileFolderOpenDlg m_inFileFolderOpenDlg;			/// フォルダーオープン画面
 
 	CDummyFileSizeDlg m_inDummyFileSizeDlg;				/// 指定ファイルサイズファイル作成画面
 
@@ -91,9 +98,19 @@ private:
 	CIUCommonInfoDlg m_inNetworkCmdArpDlg;				/// arp画面
 	CIUCommonInfoDlg m_inNetworkCmdRouteDlg;			/// route画面
 
-	CMemoDlg m_inMemoDlg;
+	CImageFontDlg m_inFontImage;						/// Fontイメージ画面
+	CImageMathGraphDlg m_inMathGraphImage;				/// 数式グラフイメージ画面
+	CImageCursorInfoDlg m_inCursorInfoImage;			/// カーソル情報イメージ画面
+
+	CMemoDlg m_inMemoDlg;								/// メモ画面
 
 	CMapStringToPtr m_mapInnerDlg;
+
+	NOTIFYICONDATA  m_cTaskTray;
+	static const ULONG m_uWMNotifyIcon;
+	static const ULONG m_uWMTaskBarCreated;
+	NOTIFYICONDATA ni;
+
 
 // 実装
 protected:
@@ -120,6 +137,9 @@ protected:
 	afx_msg void OnDropFiles(HDROP hDropInfo);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnClose();
+	afx_msg LRESULT OnTaskBarCreated(WPARAM wParam,LPARAM lParam);
+	afx_msg LRESULT OnNotifyTaskBarIcon(WPARAM wParam,LPARAM lParam);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	DECLARE_MESSAGE_MAP()
 
 private:
@@ -128,4 +148,9 @@ private:
 	BOOL HideContents();
 
 	BOOL ShowContents(CDialog *pDialog);
+
+	BOOL AddNotifyIcon();
+	BOOL DeleteNotifyIcon();
+public:
+	afx_msg void OnMenuClose();
 };

@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "InspectUsefulTools.h"
 #include "FileLockDlg.h"
+#include "IUSettingData.h"
 
 #include <io.h>
 
@@ -61,6 +62,13 @@ BOOL CFileLockDlg::OnInitDialog()
 	::SHAutoComplete(::GetDlgItem(this->m_hWnd, IDC_FILE_LOCK_PATH_EDIT), SHACF_FILESYSTEM);
 	DragAcceptFiles();
 
+	m_strFileLockPath = CIUSettingData::GetInstance().m_strFileLockPath;
+	UpdateData(FALSE);
+	
+	if (m_strFileLockPath.IsEmpty() == false) {
+		((CDialog *) this->GetDlgItem(IDC_FILE_LOCK_REGIST_BUTTON))->EnableWindow(TRUE);
+		((CDialog *) this->GetDlgItem(IDC_FILE_LOCK_CANCEL_BUTTON))->EnableWindow(FALSE);
+	}
 	return TRUE;
 }
 
@@ -89,6 +97,8 @@ void CFileLockDlg::OnBnClickedFileLockRegistButton()
 	if (m_strFileLockPath.IsEmpty() == true) {
 		return;
 	}
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strFileLockPath = m_strFileLockPath;
 
 	DWORD dwShareMode = 0;
 	if (m_bShareDenyWrite == 0) {
@@ -130,6 +140,8 @@ void CFileLockDlg::OnBnClickedFileLockCancelButton()
 		// 対象が存在しない
 		return;
 	}
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strFileLockPath = m_strFileLockPath;
 
 	HANDLE hf;
 	if (m_mapFileHandle.Lookup(m_strFileLockPath, hf) == TRUE) {
@@ -149,6 +161,16 @@ void CFileLockDlg::OnBnClickedFileLockPathSelectButton()
 {
 	// すべてのファイルを対象
 	CFileDialog fileDlg(FALSE, NULL, NULL, OFN_HIDEREADONLY , CString((LPCTSTR) IDS_IU_FILETYPE_DESCRIPT));
+
+	UpdateData(TRUE);
+	CString strFilePath = m_strFileLockPath;
+	if (strFilePath.IsEmpty() == false) {
+		PathRemoveFileSpec((LPTSTR)(LPCTSTR)strFilePath);
+		fileDlg.m_ofn.lpstrInitialDir = strFilePath;
+	}
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strFileLockPath = m_strFileLockPath;
+
 	if (fileDlg.DoModal() == IDOK) {
 		m_strFileLockPath = fileDlg.GetPathName();
 

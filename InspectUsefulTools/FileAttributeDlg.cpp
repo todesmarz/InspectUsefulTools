@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "InspectUsefulTools.h"
 #include "FileAttributeDlg.h"
+#include "IUSettingData.h"
 
 // ビットフラグ判定関数
 #define CHECK_BIT_FLAG(data, flag) (((data) & (flag)) == (flag))
@@ -54,6 +55,13 @@ BOOL CFileAttributeDlg::OnInitDialog()
 	// D&D設定
 	::SHAutoComplete(::GetDlgItem(this->m_hWnd, IDC_FILE_ATTRIBUTE_PATH_EDIT), SHACF_FILESYSTEM);
 	DragAcceptFiles();
+	
+	m_strAttributeFilePath = CIUSettingData::GetInstance().m_strAttributePath;
+	UpdateData(FALSE);
+	if (m_strAttributeFilePath.IsEmpty() == false) {
+		((CDialog *) this->GetDlgItem(IDC_FILE_ATTRIBUTE_OPEN_BUTTON))->EnableWindow(TRUE);
+		((CDialog *) this->GetDlgItem(IDC_FILE_ATTRIBUTE_SAVE_BUTTON))->EnableWindow(TRUE);
+	}
 
 	return TRUE;
 }
@@ -80,6 +88,14 @@ void CFileAttributeDlg::OnBnClickedFileAttributePathSelectButton()
 {
 	// すべてのファイルを対象
 	CFileDialog fileDlg(FALSE, NULL, NULL, OFN_HIDEREADONLY , CString((LPCTSTR) IDS_IU_FILETYPE_DESCRIPT));
+
+	UpdateData(TRUE);
+	CString strFilePath = m_strAttributeFilePath;
+	if (strFilePath.IsEmpty() == false) {
+		PathRemoveFileSpec((LPTSTR)(LPCTSTR)strFilePath);
+		fileDlg.m_ofn.lpstrInitialDir = strFilePath;
+	}
+
 	if (fileDlg.DoModal() == IDOK) {
 		m_strAttributeFilePath = fileDlg.GetPathName();
 
@@ -148,6 +164,8 @@ void CFileAttributeDlg::OnBnClickedFileAttributeOpenButton()
 			return;
 		}
 	}
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strAttributePath = m_strAttributeFilePath;
 	
 	// 読み取り専用
 	((CButton *) this->GetDlgItem(IDC_FILE_ATTRIBUTE_READONLY_CHECK))->SetCheck(
@@ -225,6 +243,9 @@ void CFileAttributeDlg::OnBnClickedFileAttributeSaveButton()
 	dwAttribute |= ((CButton *) this->GetDlgItem(IDC_FILE_ATTRIBUTE_REPARSE_CHECK))->GetCheck() ? FILE_ATTRIBUTE_REPARSE_POINT : 0;
 	// スパースファイル
 	dwAttribute |= ((CButton *) this->GetDlgItem(IDC_FILE_ATTRIBUTE_SPARSE_CHECK))->GetCheck() ? FILE_ATTRIBUTE_SPARSE_FILE : 0;
+	
+	// 設定に反映
+	CIUSettingData::GetInstance().m_strAttributePath = m_strAttributeFilePath;
 
 	// ファイルに属性を設定
 	if (SetFileAttributes(m_strAttributeFilePath, dwAttribute) == false) {

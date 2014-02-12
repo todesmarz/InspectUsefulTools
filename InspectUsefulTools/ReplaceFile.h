@@ -3,6 +3,15 @@
 */
 #pragma once
 
+
+typedef enum {
+	ASCII,
+	EUC_JP,
+	UTF_8,
+	Unicode
+
+} EReplaceFileEncoding;
+
 /*!
  @class CReplaceFile
  @brief 置換処理クラス
@@ -17,13 +26,14 @@ private:
 public:
 	CReplaceFile(CString &strBeforeReplace, CString &strAfterReplace);
 
-	int Execute(CString &strFilePath, CString &strExtName);
+	int Execute(CString &strFilePath, CString &strExtName, EReplaceFileEncoding encoding = ASCII);
 
 private:
 	
-	void SearchFile(CString &strFilePath, CString &strExtName);
-	bool ReadFile(CString &strFilePath, CStringArray &aryFileData);
+	void SearchFile(CString &strFilePath, CString &strExtName, EReplaceFileEncoding encoding);
+	bool ReadFile(CString &strFilePath, CStringArray &aryFileData, EReplaceFileEncoding encoding);
 	int RepaceFile(CStringArray &aryFileData);
-	bool WriteFile(CString &strFilePath, CStringArray &aryFileData);
+	bool WriteFile(CString &strFilePath, CStringArray &aryFileData, EReplaceFileEncoding encoding);
 	bool CheckExt(CString &strFileName, CString &strExtName);
+	bool ConvertToEncodeString(EReplaceFileEncoding encoding, CString &strEncodeString);
 };

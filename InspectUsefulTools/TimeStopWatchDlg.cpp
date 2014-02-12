@@ -74,7 +74,12 @@ BOOL CTimeStopWatchDlg::PreTranslateMessage(MSG* pMsg)
 */
 void CTimeStopWatchDlg::OnBnClickedTimeStopwatchStartButton()
 {
+	long long nDiff = m_inCurrentTime - m_inStartTime;
 	m_inStartTime = clock();
+	if (0.0 < nDiff) {
+		m_inStartTime -=  nDiff;
+	}
+
 	SetTimer(1, 10, NULL);
 	m_bStart = TRUE;
 

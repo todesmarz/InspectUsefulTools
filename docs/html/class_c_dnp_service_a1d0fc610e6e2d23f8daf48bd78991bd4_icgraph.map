@@ -1,0 +1,5 @@
+<map id="CDnpService::ChangeStatus" name="CDnpService::ChangeStatus">
+<area shape="rect" id="node2" href="$class_c_sys_service_info_dlg.html#a67026fa4127f7eeaebcb26c4310dad73" title="サービス開始ボタンをクリックすると呼び出されます。" alt="" coords="246,4,442,62"/>
+<area shape="rect" id="node3" href="$class_c_sys_service_info_dlg.html#a8ad15788a6456e52938659e543934510" title="サービス停止ボタンをクリックすると呼び出されます。" alt="" coords="246,86,442,144"/>
+<area shape="rect" id="node4" href="$class_c_sys_service_info_dlg.html#ad0d3f0c41f32e6a2e97fa71fc14e855e" title="サービス再起動ボタンをクリックすると呼び出されます。" alt="" coords="246,167,442,225"/>
+</map>

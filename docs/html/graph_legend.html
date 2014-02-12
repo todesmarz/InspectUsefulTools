@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>InspectUsefulTools: グラフの凡例</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">InspectUsefulTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 作成： Doxygen 1.8.3.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">グラフの凡例</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>このページでは、doxygen で生成されたグラフをどのようにみたらよいかを説明します。</p>
+<p>次の例を考えてみます。 </p>
+<div class="fragment"><div class="line"><span class="comment">/*! 省略されて見えないクラス */</span></div>
+<div class="line"><span class="keyword">class </span>Invisible { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! 省略されたクラス(継承関係は隠されている) */</span></div>
+<div class="line"><span class="keyword">class </span>Truncated : <span class="keyword">public</span> Invisible { };</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/* doxygen コメントによるドキュメントがないクラス */</span></div>
+<div class="line"><span class="keyword">class </span>Undocumented { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! public で継承されたクラス */</span></div>
+<div class="line"><span class="keyword">class </span>PublicBase : <span class="keyword">public</span> Truncated { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! A template class */</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span>Templ { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! protected で継承されたクラス */</span></div>
+<div class="line"><span class="keyword">class </span>ProtectedBase { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! private で継承されたクラス */</span></div>
+<div class="line"><span class="keyword">class </span>PrivateBase { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! 継承されたクラスで使われているクラス */</span></div>
+<div class="line"><span class="keyword">class </span>Used { };</div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">/*! 複数のクラスを継承している上位クラス */</span></div>
+<div class="line"><span class="keyword">class </span>Inherited : <span class="keyword">public</span> PublicBase,</div>
+<div class="line">                  <span class="keyword">protected</span> ProtectedBase,</div>
+<div class="line">                  <span class="keyword">private</span> PrivateBase,</div>
+<div class="line">                  <span class="keyword">public</span> Undocumented,</div>
+<div class="line">                  <span class="keyword">public</span> Templ&lt;int&gt;</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    Used *m_usedClass;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p> 設定ファイル中で、タグ <code>MAX_DOT_GRAPH_HEIGHT</code> が 200 にセットされた場合、次のようなグラフとなります。</p>
+<center><div class="image">
+<img src="graph_legend.png" />
+</div>
+</center> <p>上のグラフ内のボックスには次のような意味があります。 </p>
+<ul>
+<li>
+黒く塗りつぶされたボックスは、このグラフに対応する構造体やクラスを表します。 </li>
+<li>
+黒枠のボックスはドキュメントがある構造体やクラスを表します。 </li>
+<li>
+灰色の枠のボックスはドキュメントがない構造体やクラスを表します。 </li>
+<li>
+赤枠のボックスはドキュメントがある構造体やクラスを表しますが、指定されたサイズに収まらないために継承・包含関係をすべて図示することができなかったことを示します。</li>
+</ul>
+<p>矢印には次のような意味があります。 </p>
+<ul>
+<li>
+青い矢印は二つのクラス間の public 継承関係を示します。 </li>
+<li>
+緑の矢印は protected 継承関係を示します。 </li>
+<li>
+赤の矢印は private 継承関係を示します。 </li>
+<li>
+紫の破線矢印は、そのクラスが他のクラスに含まれていたり、利用されていることを示します。また、矢印が指しているクラスや構造体をどの変数でアクセスできるかを矢印のラベルとして示しています。 </li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+InspectUsefulToolsに対してWed Feb 20 2013 10:06:17に生成されました。 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

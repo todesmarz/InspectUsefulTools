@@ -1,0 +1,4 @@
+<map id="CDnpService::GetServiceInfo" name="CDnpService::GetServiceInfo">
+<area shape="rect" id="node2" href="$class_c_sys_service_info_dlg.html#a5a1291f6744a51d3abe92c0c47fca867" title="コンボボックスの選択が変更された時に呼び出されます。" alt="" coords="252,4,452,62"/>
+<area shape="rect" id="node3" href="$class_c_sys_service_info_dlg.html#a8c1a682fb952a34db76ee3ca0b88fbe1" title="タイーマーで呼び出されます。" alt="" coords="282,87,422,129"/>
+</map>

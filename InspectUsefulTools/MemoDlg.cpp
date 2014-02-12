@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "InspectUsefulTools.h"
 #include "MemoDlg.h"
+#include "IUSettingData.h"
 
 IMPLEMENT_DYNAMIC(CMemoDlg, CDialog)
 
@@ -34,6 +35,7 @@ void CMemoDlg::DoDataExchange(CDataExchange* pDX)
 */
 BEGIN_MESSAGE_MAP(CMemoDlg, CDialog)
 	ON_WM_SIZE()
+	ON_EN_CHANGE(IDC_DISPLAY_MEMO_RICHEDIT, &CMemoDlg::OnEnChangeDisplayMemoRichedit)
 END_MESSAGE_MAP()
 
 /*!
@@ -42,6 +44,17 @@ END_MESSAGE_MAP()
 BOOL CMemoDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
+
+	// 変更イベントのマスク
+	m_inMemoRichEdit.SetEventMask(ENM_CHANGE);
+
+	// This is hard-coded for example purposes. It is likely this would
+	// be read from file or another source.
+	EDITSTREAM es;
+	es.dwCookie = (DWORD)&CIUSettingData::GetInstance().m_strMemo; // Pass a pointer to the CString to the callback function
+	es.pfnCallback = MEditStreamInCallback; // Specify the pointer to the callback function
+
+	m_inMemoRichEdit.StreamIn(SF_RTF,es); // Perform the streaming
 
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }
@@ -82,4 +95,63 @@ void CMemoDlg::OnSize(UINT nType, int cx, int cy)
 		stRect.right = cx;
 		m_inMemoRichEdit.MoveWindow(&stRect);
 	}	
+}
+
+
+void CMemoDlg::OnEnChangeDisplayMemoRichedit()
+{
+	// TODO:  これが RICHEDIT コントロールの場合、このコントロールが
+	// この通知を送信するには、CDialog::OnInitDialog() 関数をオーバーライドし、
+	// CRichEditCtrl().SetEventMask() を
+	// OR 状態の ENM_CHANGE フラグをマスクに入れて呼び出す必要があります。
+
+	// TODO:  ここにコントロール通知ハンドラー コードを追加してください。
+
+	//m_inMemoRichEdit.GetWindowText(CIUSettingData::GetInstance().m_strMemo);
+	//m_inMemoRichEdit.GetTextRange(0, m_inMemoRichEdit.GetTextLength(), CIUSettingData::GetInstance().m_strMemo);
+
+	EDITSTREAM es;
+
+	es.dwCookie = (DWORD)&CIUSettingData::GetInstance().m_strMemo; // Pass a pointer to the CString to the callback function 
+	es.pfnCallback = MEditStreamOutCallback; // Specify the pointer to the callback function.
+
+	m_inMemoRichEdit.StreamOut(SF_RTF, es); // Perform the streaming
+}
+
+DWORD __stdcall MEditStreamOutCallback(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG *pcb)
+{
+	CString sThisWrite;
+	sThisWrite.GetBufferSetLength(cb);
+
+	CString *psBuffer = (CString *)dwCookie;
+	
+	for (int i=0;i<cb;i++) {
+		sThisWrite.SetAt(i,*(pbBuff+i));
+	}
+
+	*psBuffer += sThisWrite;
+
+	*pcb = sThisWrite.GetLength();
+	sThisWrite.ReleaseBuffer();
+	return 0;
+}
+
+DWORD __stdcall MEditStreamInCallback(DWORD dwCookie, LPBYTE pbBuff, LONG cb, LONG *pcb)
+{
+	CString *psBuffer = (CString *)dwCookie;
+
+	int nBufferLength = psBuffer->GetLength();
+	if (nBufferLength < cb ) cb = nBufferLength;
+
+	for (int i=0; i< cb; i++)
+	{
+		*(pbBuff+i) = (BYTE) psBuffer->GetAt(i);
+	}
+
+	*pcb = cb;
+	if (0 < cb) {
+		*psBuffer = psBuffer->Mid(cb);
+	}
+
+	return 0;
 }

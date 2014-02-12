@@ -1,0 +1,4 @@
+<map id="CIUCommonNumExecDlg::OnInitDialog" name="CIUCommonNumExecDlg::OnInitDialog">
+<area shape="rect" id="node2" href="$class_c_sys_error_descript_dlg.html#a667dad3a0acc195f3dedb0b059df1634" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="233,4,385,47"/>
+<area shape="rect" id="node3" href="$class_c_sys_process_speed_dlg.html#aae16e36d5e994c7e9890bb9f98c4685e" title="このメソッドは WM_INITDIALOG のメッセージに応答して呼び出されます。" alt="" coords="229,71,389,113"/>
+</map>

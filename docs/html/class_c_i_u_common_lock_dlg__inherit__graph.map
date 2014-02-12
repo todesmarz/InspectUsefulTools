@@ -1,0 +1,4 @@
+<map id="CIUCommonLockDlg" name="CIUCommonLockDlg">
+<area shape="rect" id="node3" href="$class_c_mem_lock_file_mapping_dlg.html" title="ロックファイル画面クラス" alt="" coords="5,154,187,182"/>
+<area shape="rect" id="node4" href="$class_c_mem_lock_mutex_dlg.html" title="Mutexロック画面クラス" alt="" coords="210,154,355,182"/>
+</map>
