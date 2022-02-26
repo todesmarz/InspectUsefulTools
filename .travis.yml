@@ -1,0 +1,10 @@
+# Enable C++ support
+language: cpp
+
+stages:
+  - format
+  - static analysis
+  - build
+  - address sanitizer
+  - thread sanitizer
+  - undefined behavior sanitizer
